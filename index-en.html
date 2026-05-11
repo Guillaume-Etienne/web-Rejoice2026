@@ -1,0 +1,1619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>REJOICE — Take care of yourself, take care of them.</title>
+<meta name="description" content="Your restorative retreats fund our work supporting children in India, Nepal, Czech Republic and France. French non-profit (loi 1901).">
+<link rel="alternate" hreflang="fr" href="index.html">
+<link rel="alternate" hreflang="en" href="index-en.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --yellow:#F5C842;--yellow-light:#FFF3C4;--yellow-warm:#E8A020;
+  --terra:#C85C3A;--terra-dark:#B04A2A;--sky:#7DC4E0;--sage:#7BA88A;
+  --cream:#FDF8F0;--brown:#5C3D2E;--text:#2C1810;--muted:#7A5C4E;--light:#B08070;
+  --r:20px;--rsm:10px;--rpill:50px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;line-height:1.6}
+
+/* ── NAV — réduite à 5 liens + CTA ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(253,248,240,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(245,200,66,0.3);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:68px;transition:box-shadow .3s}
+nav.scrolled{box-shadow:0 2px 20px rgba(44,24,16,.1)}
+.nav-logo{display:flex;align-items:center;text-decoration:none}
+.nav-links{display:flex;align-items:center;gap:1.8rem;list-style:none}
+.nav-links a{font-size:.82rem;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--terra)}
+.nav-cta{background:var(--terra)!important;color:white!important;padding:.5rem 1.3rem;border-radius:var(--rpill);font-weight:600!important;transition:background .2s!important}
+.nav-cta:hover{background:var(--terra-dark)!important}
+.lang-switch{display:inline-flex;align-items:center;gap:.5rem;font-size:.78rem;color:var(--muted);padding:.3rem .55rem;border-radius:var(--rpill);border:1.2px solid rgba(245,200,66,.35);background:rgba(255,255,255,.4);transition:border-color .2s,background .2s}
+.lang-switch:hover{border-color:var(--yellow);background:rgba(255,243,196,.3)}
+.lang-switch a{display:inline-flex;align-items:center;gap:3px;color:var(--muted);text-decoration:none;font-size:1rem;line-height:1;padding:1px 2px;border-radius:4px;transition:transform .15s,opacity .2s}
+.lang-switch a:hover{transform:scale(1.15)}
+.lang-switch a.active{opacity:1}
+.lang-switch a:not(.active){opacity:.45}
+.lang-switch a:not(.active):hover{opacity:.85}
+.lang-switch .sep{color:var(--light);font-size:.72rem}
+@media(max-width:768px){.lang-switch{padding:.25rem .45rem;gap:.35rem}}
+
+/* ── HERO — épuré, 1 phrase-choc + 2 CTA ── */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:90px 2rem 3rem;position:relative;overflow:hidden}
+.hero-bg-img{position:absolute;inset:0;background-size:cover;background-position:center}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(160deg,rgba(20,10,4,.65) 0%,rgba(44,24,16,.58) 60%,rgba(30,15,6,.7) 100%)}
+.hero-content{position:relative;z-index:2;max-width:820px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(245,200,66,.18);border:1.5px solid rgba(245,200,66,.55);border-radius:var(--rpill);padding:.4rem 1.1rem;font-size:.78rem;font-weight:500;color:#F5C842;letter-spacing:.06em;text-transform:uppercase;margin-bottom:1.6rem;animation:fadeUp .8s ease both}
+.hero-logo{height:130px;width:auto;display:block;margin:0 auto 1.6rem;filter:drop-shadow(0 4px 24px rgba(0,0,0,.35));animation:fadeUp 1s .1s ease both}
+.hero-h1{font-family:'Caveat',cursive;font-size:clamp(2.4rem,6vw,4.8rem);font-weight:700;color:white;line-height:1.05;margin-bottom:1.4rem;animation:fadeUp 1s .2s ease both;text-shadow:0 2px 24px rgba(0,0,0,.4)}
+.hero-h1 span{color:var(--yellow);display:block}
+.hero-sub{font-family:'Lora',serif;font-style:italic;font-size:clamp(1rem,2vw,1.2rem);color:rgba(255,255,255,.88);max-width:720px;margin:0 auto 2.4rem;animation:fadeUp 1s .3s ease both;line-height:1.7}
+.hero-sub .hl{color:var(--yellow);font-style:italic}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;animation:fadeUp 1s .4s ease both}
+.scroll-hint{position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);animation:bounce 2s infinite;color:rgba(255,255,255,.6);font-size:1.3rem;z-index:2}
+
+/* ── BANDE CHIFFRES IMPACT ── */
+.impact-band{background:var(--text);color:white;padding:2.5rem 2rem;position:relative}
+.impact-band-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;text-align:center}
+@media(max-width:700px){.impact-band-inner{grid-template-columns:1fr;gap:1.5rem}}
+.impact-stat{position:relative}
+.impact-stat:not(:last-child)::after{content:'';position:absolute;right:-1rem;top:20%;height:60%;width:1px;background:rgba(245,200,66,.3)}
+@media(max-width:700px){.impact-stat:not(:last-child)::after{display:none}}
+.impact-num{font-family:'Caveat',cursive;font-size:clamp(2.4rem,5vw,3.2rem);font-weight:700;color:var(--yellow);line-height:1;margin-bottom:.3rem}
+.impact-lbl{font-size:.85rem;color:rgba(255,255,255,.78);letter-spacing:.04em}
+
+/* ── PRINCIPE REJOICE ── */
+.principe{background:white;padding:5rem 2rem;text-align:center}
+.principe-inner{max-width:1000px;margin:0 auto}
+.principe h2{font-family:'Caveat',cursive;font-size:clamp(2rem,4vw,3rem);font-weight:700;color:var(--text);margin-bottom:.6rem}
+.principe-sub{font-family:'Lora',serif;font-style:italic;color:var(--muted);font-size:1.05rem;margin-bottom:3.5rem}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;position:relative;margin-bottom:3rem}
+.steps::before{content:'';position:absolute;top:40px;left:calc(16.66% + 16px);right:calc(16.66% + 16px);height:2px;background:linear-gradient(to right,var(--yellow),var(--terra));z-index:0}
+@media(max-width:700px){.steps{grid-template-columns:1fr;gap:2rem}.steps::before{display:none}}
+.step{display:flex;flex-direction:column;align-items:center;padding:0 1.5rem;position:relative;z-index:1}
+.step-num{width:80px;height:80px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Caveat',cursive;font-size:2rem;font-weight:700;margin-bottom:1.2rem;border:3px solid white;box-shadow:0 4px 20px rgba(0,0,0,.1)}
+.step:nth-child(1) .step-num{background:var(--yellow);color:var(--text)}
+.step:nth-child(2) .step-num{background:var(--terra);color:white}
+.step:nth-child(3) .step-num{background:var(--text);color:var(--yellow)}
+.step h3{font-family:'Caveat',cursive;font-size:1.4rem;font-weight:700;color:var(--text);margin-bottom:.5rem}
+.step p{font-size:.9rem;color:var(--muted);line-height:1.65}
+.principe-conclusion{background:linear-gradient(135deg,var(--yellow-light),#FFF8E0);border-radius:16px;padding:2rem 2.5rem;border-left:4px solid var(--yellow);max-width:700px;margin:0 auto}
+.principe-conclusion p{font-family:'Lora',serif;font-style:italic;font-size:1.05rem;color:var(--text);line-height:1.8}
+.principe-conclusion strong{color:var(--terra);font-style:normal}
+
+/* ── BANDE 2 FORMULES ── */
+.band{padding:5rem 2rem;text-align:center;position:relative;overflow:hidden}
+.band-in{position:relative;z-index:1;max-width:780px;margin:0 auto}
+.band-title{font-family:'Caveat',cursive;font-size:clamp(2rem,4.5vw,3.4rem);font-weight:700;line-height:1.1;margin-bottom:1rem}
+.band-sub{font-family:'Lora',serif;font-style:italic;font-size:1.1rem;margin-bottom:2rem;line-height:1.7}
+.formula-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3.5rem}
+@media(max-width:700px){.formula-grid{grid-template-columns:1fr}}
+.f-card{background:white;border-radius:var(--r);padding:2.5rem;position:relative;border:2px solid transparent;transition:transform .25s,box-shadow .25s;overflow:hidden;text-align:left;display:flex;flex-direction:column}
+.f-card::before{content:'';position:absolute;top:0;left:0;right:0;height:5px}
+.f-card.std::before{background:var(--sky)}
+.f-card.feat::before{background:var(--terra)}
+.f-card.feat{border-color:var(--yellow);box-shadow:0 0 0 4px var(--yellow-light)}
+.f-card:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,.1)}
+.f-card-photo{width:calc(100% + 5rem);height:210px;object-fit:cover;display:block;margin:-2.5rem -2.5rem 1.8rem}
+.f-badge{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.3rem .9rem;border-radius:var(--rpill);margin:0 auto 1.2rem;align-self:center;white-space:nowrap;line-height:1.4}
+.f-badge.std{background:#E8F5FB;color:#3A7A9A}
+.f-badge.feat{background:var(--yellow);color:var(--text)}
+.f-card h3{font-family:'Caveat',cursive;font-size:1.9rem;font-weight:700;margin-bottom:.8rem;color:var(--text);min-height:2.2rem}
+.f-card>p{font-family:'Lora',serif;font-size:.97rem;color:var(--muted);line-height:1.75;margin-bottom:1.5rem;min-height:5.1rem}
+.f-card ul{list-style:none;display:flex;flex-direction:column;gap:.5rem;margin-bottom:2rem;flex:1}
+.f-card ul li{font-size:.88rem;color:var(--muted);display:flex;align-items:flex-start;gap:.5rem;justify-content:center;text-align:left}
+.f-card ul li::before{content:'✦';color:var(--yellow-warm);flex-shrink:0;margin-top:1px}
+.f-card>a.btn{margin-top:auto}
+
+/* ── LAURENT COURT (CONFIANCE) ── */
+.founder-short{background:white;padding:5rem 2rem}
+.founder-short-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:200px 1fr 200px;gap:3rem;align-items:center}
+@media(max-width:900px){.founder-short-inner{grid-template-columns:1fr;text-align:center;gap:1.5rem}}
+.founder-short-portrait{width:180px;height:180px;border-radius:50%;background:linear-gradient(135deg,var(--yellow),var(--yellow-warm));box-shadow:0 12px 40px rgba(44,24,16,.2);overflow:hidden;margin:0 auto}
+.founder-short-portrait img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.founder-short-cloud{width:200px;margin:0 auto;text-align:center;cursor:pointer}
+.founder-short-cloud-svg{position:relative;width:200px;height:130px;margin:0 auto}
+.founder-short-cloud-svg svg{position:absolute;inset:0;width:100%;height:100%}
+.founder-short-cloud-svg .vidwrap{position:absolute;inset:6px;clip-path:url(#cloudClipMini);border-radius:50%}
+.founder-short-cloud-svg video,.founder-short-cloud-svg .vid-fallback{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.founder-short-cloud-svg .vid-fallback{background:linear-gradient(135deg,#2C1810,#5C3D2E);display:flex;align-items:center;justify-content:center;color:#F5C842;font-family:'Caveat',cursive;font-size:.8rem;text-align:center;padding:.6rem}
+.founder-short-cloud-play{position:absolute;width:36px;height:36px;background:rgba(245,200,66,.92);border-radius:50%;display:flex;align-items:center;justify-content:center;top:50%;left:50%;transform:translate(-50%,-50%);z-index:3;transition:transform .2s}
+.founder-short-cloud:hover .founder-short-cloud-play{transform:translate(-50%,-50%) scale(1.1)}
+.founder-short-cloud-label{font-family:'Caveat',cursive;font-size:.92rem;color:var(--terra);font-weight:600;margin-top:.4rem}
+.founder-short-label{display:inline-block;font-family:'Caveat',cursive;font-size:1rem;font-weight:600;color:var(--terra);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.4rem}
+.founder-short h3{font-family:'Caveat',cursive;font-size:clamp(1.8rem,3vw,2.2rem);font-weight:700;color:var(--text);margin-bottom:.3rem;line-height:1.15}
+.founder-short-role{font-size:.85rem;color:var(--muted);margin-bottom:1.2rem}
+.founder-short-quote{font-family:'Lora',serif;font-style:italic;font-size:1.05rem;color:var(--text);line-height:1.75;border-left:3px solid var(--yellow);padding-left:1.2rem;margin-bottom:1.2rem}
+.founder-short-link{font-size:.9rem;color:var(--terra);text-decoration:none;font-weight:600;transition:color .2s}
+.founder-short-link:hover{color:var(--terra-dark)}
+
+/* ── TÉMOIGNAGES ── */
+.testi-section{background:var(--yellow-light);padding:5rem 2rem}
+.testi-inner{max-width:1100px;margin:0 auto}
+.testi-head{text-align:center;margin-bottom:3rem}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.5rem}
+.testi-card{background:white;border-radius:var(--r);padding:2rem}
+.testi-card::before{content:'★★★★★';color:var(--yellow);font-size:.85rem;letter-spacing:2px;display:block;margin-bottom:.8rem}
+.testi-text{font-family:'Lora',serif;font-style:italic;font-size:.93rem;color:var(--muted);line-height:1.75;margin-bottom:1.2rem}
+.testi-author{font-size:.85rem;font-weight:600;color:var(--text)}
+.testi-role{font-size:.78rem;color:var(--light)}
+
+/* ── BTNS ── */
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:var(--rpill);padding:.85rem 2rem;font-family:'Inter',sans-serif;font-size:.95rem;font-weight:600;text-decoration:none;cursor:pointer;border:none;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.12)}
+.btn-p{background:var(--terra);color:white}.btn-p:hover{background:var(--terra-dark)}
+.btn-s{background:var(--yellow);color:var(--text)}.btn-s:hover{background:var(--yellow-warm)}
+.btn-o{background:transparent;color:var(--text);border:2px solid currentColor}.btn-o:hover{background:var(--yellow-light)}
+.btn-ha{background:#00A8A8;color:white;font-size:1.05rem;padding:1rem 2.5rem}.btn-ha:hover{background:#008888}
+
+/* ── SECTIONS génériques ── */
+section{padding:5rem 2rem;max-width:1100px;margin:0 auto}
+.s-label{display:inline-block;font-family:'Caveat',cursive;font-size:1rem;font-weight:600;color:var(--terra);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.5rem}
+.s-title{font-family:'Caveat',cursive;font-size:clamp(2rem,4.5vw,3.2rem);font-weight:700;color:var(--text);line-height:1.15;margin-bottom:1rem}
+.s-body{font-family:'Lora',serif;font-size:1.05rem;color:var(--muted);line-height:1.8;max-width:680px}
+
+/* ── SÉJOURS ── */
+.gallery{display:flex;flex-wrap:wrap;justify-content:center;gap:0;margin-top:2rem;padding:1.5rem 0}
+.polaroid{background:white;padding:8px 8px 28px;box-shadow:0 6px 20px rgba(0,0,0,.18);transition:transform .35s cubic-bezier(.17,.67,.3,1.33),z-index .1s,box-shadow .35s;cursor:pointer;width:175px;margin:-12px -8px;position:relative}
+.polaroid:nth-child(1){transform:rotate(-4deg) translateY(0)}
+.polaroid:nth-child(2){transform:rotate(3deg) translateY(8px);z-index:2}
+.polaroid:nth-child(3){transform:rotate(-2.5deg) translateY(-6px);z-index:3}
+.polaroid:nth-child(4){transform:rotate(4.5deg) translateY(4px);z-index:2}
+.polaroid:nth-child(5){transform:rotate(-3.5deg) translateY(10px)}
+.polaroid:nth-child(6){transform:rotate(2deg) translateY(-4px);z-index:2}
+.polaroid:nth-child(7){transform:rotate(-3deg) translateY(6px);z-index:3}
+.polaroid:nth-child(8){transform:rotate(3.5deg) translateY(0);z-index:2}
+.polaroid:nth-child(9){transform:rotate(-2deg) translateY(-8px);z-index:3}
+.polaroid:nth-child(10){transform:rotate(4deg) translateY(6px);z-index:2}
+.polaroid:nth-child(11){transform:rotate(-4.5deg) translateY(0);z-index:3}
+.polaroid:nth-child(12){transform:rotate(2.5deg) translateY(8px);z-index:2}
+.polaroid:hover{transform:rotate(0deg) translateY(-12px) scale(1.08);z-index:10;box-shadow:0 18px 40px rgba(0,0,0,.28)}
+.polaroid img{width:100%;height:155px;object-fit:cover;display:block}
+.polaroid-cap{text-align:center;margin-top:6px;font-family:'Caveat',cursive;font-size:.95rem;color:var(--muted);line-height:1.1}
+.poum-block{background:linear-gradient(135deg,#2C1810 0%,#5C3D2E 100%);border-radius:var(--r);padding:3.5rem;color:white;margin:2rem auto;max-width:1100px}
+@media(max-width:700px){.poum-block{padding:2rem;margin:1rem}}
+.poum-block h2{font-family:'Caveat',cursive;font-size:clamp(1.8rem,3.5vw,2.6rem);color:var(--yellow);margin-bottom:1rem}
+.poum-block p{font-family:'Lora',serif;font-style:italic;font-size:1rem;color:rgba(255,255,255,.85);max-width:600px;line-height:1.8;margin-bottom:2rem}
+.poum-details{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem}
+.poum-detail{background:rgba(245,200,66,.12);border:1px solid rgba(245,200,66,.3);border-radius:var(--rsm);padding:.7rem 1rem;font-size:.85rem;color:rgba(255,255,255,.9)}
+.poum-detail strong{color:var(--yellow);display:block;font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
+.poum-img-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;border-radius:12px;overflow:hidden;margin-bottom:1.5rem}
+.poum-img-strip img{width:100%;height:150px;object-fit:cover;display:block}
+.sejour-block{background:white;border-radius:var(--r);padding:3.5rem;margin:0 auto;max-width:1100px}
+@media(max-width:700px){.sejour-block{padding:2rem;margin:0 1rem}}
+
+/* ── BLOC DATES SEJOURS ── */
+.dates-section{padding:2rem 2rem 1rem;max-width:1100px;margin:0 auto}
+.dates-head{text-align:center;margin-bottom:2rem}
+.dates-head h3{font-family:'Caveat',cursive;font-size:clamp(1.7rem,3vw,2.2rem);font-weight:700;color:var(--text);line-height:1.15;margin-bottom:.4rem}
+.dates-head p{font-family:'Lora',serif;font-style:italic;color:var(--muted);font-size:1rem}
+.dates-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2rem}
+@media(max-width:900px){.dates-grid{grid-template-columns:1fr;max-width:380px;margin-left:auto;margin-right:auto}}
+.date-card{background:white;border-radius:var(--r);padding:1.8rem 1.6rem 1.6rem;border:1.5px solid rgba(245,200,66,.3);position:relative;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s;overflow:hidden}
+.date-card:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(44,24,16,.1)}
+.date-card.passed{background:#FAF7EE;opacity:.92}
+.date-card.featured{border:2px solid var(--yellow);box-shadow:0 0 0 4px var(--yellow-light)}
+.date-card.featured::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:var(--terra)}
+.date-card-header{height:88px;border-radius:12px 12px 0 0;margin:-1.8rem -1.6rem 1.2rem;padding:1.4rem 1.6rem .8rem;position:relative;overflow:hidden}
+.date-card.passed .date-card-header{background:linear-gradient(135deg,rgba(123,168,138,.18),rgba(123,168,138,.08))}
+.date-card.featured .date-card-header{background:linear-gradient(135deg,#FFF8E0,rgba(245,200,66,.18))}
+.date-card.upcoming .date-card-header{background:linear-gradient(135deg,rgba(255,243,196,.5),rgba(245,200,66,.1))}
+.date-card-status{font-family:'Caveat',cursive;font-size:1rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;line-height:1}
+.date-card.passed .date-card-status{color:#5C8870}
+.date-card.featured .date-card-status,.date-card.upcoming .date-card-status{color:var(--terra)}
+.date-card-date{font-family:'Caveat',cursive;font-size:1.7rem;font-weight:700;color:var(--text);line-height:1.05;margin:.3rem 0 .15rem}
+.date-card-year{font-family:'Lora',serif;font-style:italic;font-size:.92rem;color:var(--muted);line-height:1.1}
+.date-card-places{position:absolute;top:1.2rem;right:1.2rem;background:var(--yellow);color:var(--text);font-size:.72rem;font-weight:600;padding:.3rem .7rem;border-radius:var(--rpill);letter-spacing:.04em}
+.date-card-body{font-size:.88rem;color:var(--muted);line-height:1.7;flex:1}
+.date-card-body div{margin-bottom:.35rem}
+.date-card-quote{font-family:'Lora',serif;font-style:italic;color:var(--muted);font-size:.9rem;line-height:1.6;margin:.8rem 0 .3rem;padding:.6rem 0 0;border-top:1px dashed rgba(245,200,66,.4)}
+.date-card-quote-author{font-size:.78rem;color:var(--light);font-style:normal;margin-top:.2rem}
+.date-card-tagline{font-family:'Caveat',cursive;font-size:1.15rem;color:var(--brown);line-height:1.3;margin-top:.4rem}
+.date-card-cta{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;padding:.7rem 1rem;border-radius:var(--rpill);font-family:'Inter',sans-serif;font-size:.85rem;font-weight:600;text-decoration:none;margin-top:1.2rem;transition:transform .15s,box-shadow .15s}
+.date-card-cta.primary{background:var(--terra);color:white}
+.date-card-cta.primary:hover{background:var(--terra-dark);transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,0,0,.12)}
+.date-card-cta.secondary{background:transparent;color:#5C8870;border:1.2px solid #7BA88A}
+.date-card-cta.secondary:hover{background:rgba(123,168,138,.08)}
+.date-card-cta.tertiary{background:transparent;color:var(--yellow-warm);border:1.2px solid var(--yellow)}
+.date-card-cta.tertiary:hover{background:var(--yellow-light)}
+/* tampon Approuvé */
+.stamp-approved{position:absolute;top:.9rem;right:.7rem;width:80px;height:60px;display:flex;flex-direction:column;align-items:center;justify-content:center;transform:rotate(-12deg);background:rgba(200,92,58,.92);border-radius:50%;border:2px dashed rgba(255,255,255,.4);box-shadow:0 4px 12px rgba(44,24,16,.18);pointer-events:none}
+.stamp-approved-main{font-family:'Caveat',cursive;font-size:1rem;font-weight:700;color:white;line-height:1;letter-spacing:.02em}
+.stamp-approved-sub{font-family:'Caveat',cursive;font-size:.78rem;color:white;font-style:italic;line-height:1;margin-top:2px;opacity:.92}
+.locs{display:flex;flex-wrap:wrap;gap:.8rem;margin:1.5rem 0}
+.loc-pill{display:inline-flex;align-items:center;gap:6px;background:var(--cream);border:1.5px solid var(--yellow);border-radius:var(--rpill);padding:.4rem 1rem;font-size:.85rem;font-weight:500;color:var(--text)}
+.feats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;margin:2.5rem 0}
+.feats>.feat{text-align:center;padding:0 0 1.4rem;background:var(--cream);border-radius:var(--rsm);overflow:hidden;border:1px solid rgba(245,200,66,.2)}
+.feats>.feat .feat-photo{width:100%;height:130px;object-fit:cover;display:block}
+.feats>.feat .icon{font-size:2rem;display:block;margin:1.2rem 0 .5rem}
+.feats>.feat h4{font-family:'Caveat',cursive;font-size:1.2rem;font-weight:700;color:var(--text);margin:1rem 1rem .3rem}
+.feats>.feat p{font-size:.83rem;color:var(--muted);line-height:1.5;padding:0 1rem}
+
+/* ── CTA INTERMÉDIAIRE SÉJOURS ── */
+.cta-mid{background:var(--yellow);padding:3rem 2rem;text-align:center;position:relative;overflow:hidden}
+.cta-mid-inner{max-width:680px;margin:0 auto;position:relative;z-index:1}
+.cta-mid h3{font-family:'Caveat',cursive;font-size:clamp(1.8rem,3.5vw,2.4rem);font-weight:700;color:var(--text);margin-bottom:.6rem;line-height:1.2}
+.cta-mid p{font-family:'Lora',serif;font-style:italic;font-size:1rem;color:var(--brown);margin-bottom:1.6rem}
+
+/* ── IMPACT TERRAIN (fusionné) ── */
+.impact-section{background:white;padding:5rem 2rem}
+.impact-inner{max-width:1100px;margin:0 auto}
+.impact-flags{display:flex;justify-content:center;flex-wrap:wrap;gap:1.4rem;margin:1.4rem 0 2.4rem;font-size:.95rem;color:var(--muted)}
+.impact-flags span{display:inline-flex;align-items:center;gap:6px}
+.impact-flags .sep{color:var(--light)}
+.proj-filters{display:flex;gap:.7rem;flex-wrap:wrap;margin:2rem 0;justify-content:center}
+.proj-filter{padding:.4rem 1.2rem;border-radius:var(--rpill);border:1.5px solid var(--yellow);background:transparent;font-size:.85rem;font-weight:500;cursor:pointer;transition:background .2s,color .2s;color:var(--text);font-family:'Inter',sans-serif}
+.proj-filter.active,.proj-filter:hover{background:var(--yellow);color:var(--text)}
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin-top:1.5rem}
+.proj-card{border-radius:var(--r);overflow:hidden;border:1.5px solid rgba(245,200,66,.3);background:var(--cream);transition:transform .25s,box-shadow .25s}
+.proj-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.1)}
+.proj-card img{width:100%;height:200px;object-fit:cover;display:block;cursor:pointer}
+.proj-card-body{padding:1.5rem}
+.proj-tag{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.25rem .8rem;border-radius:var(--rpill);margin-bottom:.8rem}
+.proj-card h4{font-family:'Caveat',cursive;font-size:1.4rem;font-weight:700;margin-bottom:.5rem;color:var(--text)}
+.proj-card p{font-size:.88rem;color:var(--muted);line-height:1.65;margin-bottom:1rem}
+.proj-date{font-size:.78rem;color:var(--light)}
+
+/* ── GALERIE TERRAIN UNIFIÉE ── */
+.terrain-gallery{margin-top:4rem}
+.terrain-head{text-align:center;margin-bottom:2rem}
+.terrain-head h3{font-family:'Caveat',cursive;font-size:clamp(1.8rem,3.5vw,2.4rem);font-weight:700;color:var(--text);margin-bottom:.4rem}
+.terrain-head p{font-family:'Lora',serif;font-style:italic;color:var(--muted);font-size:1rem}
+.terrain-hero{border-radius:16px;overflow:hidden;margin-bottom:1rem;box-shadow:0 20px 60px rgba(44,24,16,.18);position:relative;cursor:pointer}
+.terrain-hero img{width:100%;height:340px;object-fit:cover;object-position:center 30%;display:block;transition:transform .4s}
+.terrain-hero:hover img{transform:scale(1.02)}
+.terrain-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(44,24,16,.55) 0%,transparent 55%);pointer-events:none}
+.terrain-hero-cap{position:absolute;bottom:1.6rem;left:2rem;right:2rem;color:white}
+.terrain-hero-cap h4{font-family:'Caveat',cursive;font-size:1.7rem;font-weight:700}
+.terrain-hero-cap p{font-family:'Lora',serif;font-style:italic;font-size:.95rem;opacity:.85;margin-top:.2rem}
+.terrain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1rem}
+@media(max-width:700px){.terrain-grid{grid-template-columns:repeat(2,1fr)}}
+.terrain-cell{border-radius:14px;overflow:hidden;cursor:pointer;aspect-ratio:4/5}
+.terrain-cell img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;transition:.3s}
+.terrain-cell:hover img{transform:scale(1.04)}
+.terrain-grid21{display:grid;grid-template-columns:2fr 1fr;gap:1rem;margin-bottom:1rem}
+@media(max-width:700px){.terrain-grid21{grid-template-columns:1fr}}
+.terrain-wide{border-radius:14px;overflow:hidden;cursor:pointer}
+.terrain-wide img{width:100%;height:260px;object-fit:cover;display:block;transition:.3s}
+.terrain-wide:hover img{transform:scale(1.02)}
+.terrain-small-col{display:flex;flex-direction:column;gap:1rem}
+.terrain-small{border-radius:14px;overflow:hidden;cursor:pointer;flex:1}
+.terrain-small img{width:100%;height:122px;object-fit:cover;display:block;transition:.3s}
+.terrain-small:hover img{transform:scale(1.04)}
+.terrain-quote{background:linear-gradient(135deg,#2C1810,#5C3D2E);border-radius:16px;padding:2.2rem 2.5rem;display:flex;align-items:center;gap:2rem;margin-top:2rem;flex-wrap:wrap}
+.terrain-quote p{font-family:'Lora',serif;font-style:italic;font-size:1rem;color:rgba(255,255,255,.88);line-height:1.8;margin-bottom:.6rem;flex:1;min-width:250px}
+.terrain-quote .author{font-size:.82rem;font-weight:600;color:var(--yellow)}
+
+/* ── MISSIONS condensées ── */
+.missions-section{background:var(--cream);padding:5rem 2rem}
+.missions-inner{max-width:1100px;margin:0 auto}
+.missions-head{text-align:center;margin-bottom:2.5rem}
+.missions-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.4rem}
+.m-card{background:white;border-radius:var(--rsm);overflow:hidden;border:1.5px solid rgba(245,200,66,.3);transition:transform .25s,box-shadow .25s;display:flex;flex-direction:column}
+.m-card:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(0,0,0,.1)}
+.m-card-photo{width:100%;height:160px;object-fit:cover;display:block}
+.m-card-body{padding:1.2rem 1.2rem 1.5rem;text-align:center;flex:1;display:flex;flex-direction:column}
+.m-card h4{font-family:'Caveat',cursive;font-size:1.4rem;font-weight:700;margin-bottom:.5rem;color:var(--text)}
+.m-card p{font-size:.85rem;color:var(--muted);line-height:1.55}
+
+/* ── DON principal ── */
+.don-section{padding:5rem 2rem;text-align:center;background:white}
+.don-inner{max-width:1100px;margin:0 auto}
+.don-amounts{display:flex;justify-content:center;flex-wrap:wrap;gap:1rem;margin:2.5rem 0}
+.don-amt{display:flex;flex-direction:column;align-items:center;background:var(--cream);border-radius:var(--r);padding:1.8rem 1.5rem;border:2px solid var(--yellow-light);cursor:pointer;transition:border-color .2s,transform .2s;min-width:145px;text-decoration:none}
+.don-amt:hover{border-color:var(--yellow);transform:translateY(-2px)}
+.don-amt .amt{font-family:'Caveat',cursive;font-size:2rem;font-weight:700;color:var(--text)}
+.don-amt .lbl{font-size:.78rem;color:var(--muted);margin-top:.2rem}
+.don-amt .red{font-size:.73rem;color:var(--sage);font-weight:600;margin-top:.3rem}
+
+/* ── INFOGRAPHIE 100€ ── */
+.infograph{background:linear-gradient(135deg,#FFF8E0,#FFF3C4);border-radius:var(--r);padding:2.5rem 2rem;margin:3rem auto 0;max-width:780px;text-align:center;border:1.5px solid rgba(245,200,66,.4)}
+.infograph-title{font-family:'Inter',sans-serif;font-size:.78rem;font-weight:600;color:var(--brown);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.4rem}
+.infograph-sub{font-family:'Caveat',cursive;font-size:1.7rem;color:var(--text);margin-bottom:2rem;line-height:1.1}
+.infograph-bar{display:flex;height:60px;border-radius:30px;overflow:hidden;margin:1.5rem 0;box-shadow:0 4px 16px rgba(44,24,16,.08)}
+.infograph-seg{display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;font-family:'Caveat',cursive;font-weight:700;line-height:1;padding:0 .5rem}
+.infograph-seg .pct{font-size:1.4rem}
+.infograph-seg-1{background:var(--terra);flex:91.8}
+.infograph-seg-2{background:var(--yellow-warm);flex:0;display:none}
+.infograph-seg-3{background:var(--brown);flex:8.2}
+.infograph-legend{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.2rem;text-align:left}
+@media(max-width:600px){.infograph-legend{grid-template-columns:1fr}}
+.infograph-leg{font-size:.85rem;color:var(--muted);line-height:1.5;display:flex;gap:.6rem;align-items:flex-start}
+.infograph-leg .dot{width:14px;height:14px;border-radius:50%;flex-shrink:0;margin-top:3px}
+.infograph-leg .dot.c1{background:var(--terra)}.infograph-leg .dot.c2{background:var(--yellow-warm)}.infograph-leg .dot.c3{background:var(--brown)}
+.infograph-leg strong{font-family:'Caveat',cursive;font-size:1.15rem;color:var(--text);font-weight:700;display:block;line-height:1}
+.infograph-note{font-family:'Lora',serif;font-style:italic;font-size:.78rem;color:var(--light);margin-top:1.4rem}
+
+/* ── ENCART TRANSPARENCE ── */
+.transparence{background:white;border:1.5px solid rgba(245,200,66,.4);border-radius:var(--r);padding:2.2rem 2.5rem;margin:3rem auto 0;max-width:780px;text-align:left;display:flex;gap:1.6rem;align-items:flex-start}
+@media(max-width:600px){.transparence{flex-direction:column;padding:1.8rem;text-align:center}}
+.transparence-icon{width:54px;height:54px;border-radius:50%;background:var(--yellow-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.5rem}
+.transparence-body h4{font-family:'Caveat',cursive;font-size:1.5rem;color:var(--text);margin-bottom:.3rem;line-height:1.2}
+.transparence-body p{font-family:'Lora',serif;font-size:.95rem;color:var(--muted);line-height:1.7;margin-bottom:.8rem}
+.transparence-body p:last-child{margin-bottom:0}
+.transparence-body a{color:var(--terra);text-decoration:none;font-weight:600;border-bottom:1px solid rgba(200,92,58,.3);transition:border-color .2s}
+.transparence-body a:hover{border-color:var(--terra)}
+
+/* ── FAQ ACCORDEON ── */
+.faq{margin:3.5rem auto 0;max-width:780px;text-align:left}
+.faq-head{text-align:center;margin-bottom:1.8rem}
+.faq-head h3{font-family:'Caveat',cursive;font-size:clamp(1.7rem,3vw,2.2rem);font-weight:700;color:var(--text);line-height:1.15;margin-bottom:.3rem}
+.faq-head p{font-family:'Lora',serif;font-style:italic;color:var(--muted);font-size:.95rem}
+.faq-item{background:white;border:1.5px solid rgba(245,200,66,.3);border-radius:14px;margin-bottom:.8rem;overflow:hidden;transition:border-color .2s}
+.faq-item.open{border-color:var(--yellow)}
+.faq-q{width:100%;background:none;border:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.2rem 1.5rem;font-family:'Inter',sans-serif;font-size:.98rem;font-weight:500;color:var(--text);text-align:left;line-height:1.4}
+.faq-q:hover{background:var(--cream)}
+.faq-q-icon{flex-shrink:0;width:24px;height:24px;border-radius:50%;background:var(--yellow-light);display:flex;align-items:center;justify-content:center;font-size:1rem;color:var(--brown);transition:transform .25s,background .2s}
+.faq-item.open .faq-q-icon{background:var(--yellow);transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-item.open .faq-a{max-height:600px}
+.faq-a-inner{padding:0 1.5rem 1.4rem;font-family:'Lora',serif;font-size:.95rem;color:var(--muted);line-height:1.7}
+.faq-a-inner p{margin-bottom:.7rem}
+.faq-a-inner p:last-child{margin-bottom:0}
+.faq-a-inner strong{color:var(--text);font-weight:600;font-family:'Inter',sans-serif}
+
+/* ── FORMULAIRE SEJOUR ── */
+.sejour-form{background:linear-gradient(135deg,#FFF8E0,#FDF8F0);border-radius:var(--r);padding:2.5rem;margin:0 auto;max-width:780px}
+@media(max-width:600px){.sejour-form{padding:1.8rem;border-radius:18px}}
+.sejour-form-head{text-align:center;margin-bottom:2rem}
+.sejour-form-head h3{font-family:'Caveat',cursive;font-size:clamp(1.7rem,3vw,2.2rem);font-weight:700;color:var(--text);line-height:1.15;margin-bottom:.4rem}
+.sejour-form-head p{font-family:'Lora',serif;font-style:italic;color:var(--muted);font-size:.95rem}
+.sejour-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+@media(max-width:600px){.sejour-form-grid{grid-template-columns:1fr}}
+.sejour-form-field{display:flex;flex-direction:column}
+.sejour-form-field.full{grid-column:1/-1}
+.sejour-form-field label{font-family:'Inter',sans-serif;font-size:.78rem;font-weight:600;color:var(--brown);margin-bottom:.4rem;letter-spacing:.04em;text-transform:uppercase}
+.sejour-form-field input,.sejour-form-field select,.sejour-form-field textarea{font-family:'Inter',sans-serif;font-size:.95rem;color:var(--text);background:white;border:1.5px solid rgba(245,200,66,.4);border-radius:10px;padding:.75rem 1rem;outline:none;transition:border-color .2s,box-shadow .2s;width:100%}
+.sejour-form-field textarea{resize:vertical;min-height:110px;font-family:'Lora',serif}
+.sejour-form-field input:focus,.sejour-form-field select:focus,.sejour-form-field textarea:focus{border-color:var(--yellow);box-shadow:0 0 0 3px var(--yellow-light)}
+.sejour-form-cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:1rem 2rem;border-radius:var(--rpill);background:var(--terra);color:white;border:none;cursor:pointer;font-family:'Inter',sans-serif;font-size:.95rem;font-weight:600;letter-spacing:.04em;text-decoration:none;transition:background .2s,transform .15s,box-shadow .2s;margin-top:.6rem}
+.sejour-form-cta:hover{background:var(--terra-dark);transform:translateY(-1px);box-shadow:0 8px 24px rgba(200,92,58,.3)}
+.sejour-form-note{font-family:'Lora',serif;font-style:italic;font-size:.78rem;color:var(--light);text-align:center;margin-top:.9rem;line-height:1.5}
+
+/* ── NEWSLETTER ── */
+.newsletter{background:white;border:1.5px solid rgba(245,200,66,.4);border-radius:var(--r);padding:2rem 2.5rem;margin:3rem auto 0;max-width:780px;text-align:center}
+@media(max-width:600px){.newsletter{padding:1.8rem;border-radius:18px}}
+.newsletter h4{font-family:'Caveat',cursive;font-size:1.7rem;color:var(--text);line-height:1.2;margin-bottom:.4rem}
+.newsletter p{font-family:'Lora',serif;font-style:italic;color:var(--muted);font-size:.92rem;margin-bottom:1.4rem;line-height:1.6}
+.newsletter-form{display:flex;gap:.6rem;max-width:480px;margin:0 auto}
+@media(max-width:520px){.newsletter-form{flex-direction:column}}
+.newsletter-form input{flex:1;font-family:'Inter',sans-serif;font-size:.95rem;background:var(--cream);border:1.5px solid rgba(245,200,66,.4);border-radius:var(--rpill);padding:.75rem 1.2rem;outline:none;transition:border-color .2s}
+.newsletter-form input:focus{border-color:var(--yellow);background:white}
+.newsletter-form button{font-family:'Inter',sans-serif;font-size:.92rem;font-weight:600;background:var(--yellow);color:var(--text);border:none;border-radius:var(--rpill);padding:.75rem 1.6rem;cursor:pointer;transition:background .2s,transform .15s;white-space:nowrap}
+.newsletter-form button:hover{background:var(--yellow-warm);color:white;transform:translateY(-1px)}
+.newsletter-note{font-family:'Lora',serif;font-style:italic;font-size:.75rem;color:var(--light);margin-top:.9rem}
+
+/* ── QUI SOMMES-NOUS détaillé ── */
+.qsn{padding:5rem 2rem;background:var(--cream)}
+.qsn-inner{max-width:1100px;margin:0 auto}
+.qsn-head{text-align:center;margin-bottom:3rem}
+.qsn-grid{display:grid;grid-template-columns:1fr 2fr;gap:4rem;align-items:start}
+@media(max-width:800px){.qsn-grid{grid-template-columns:1fr}}
+.bio-para{font-family:'Lora',serif;font-size:1.05rem;color:var(--muted);line-height:1.85;margin-bottom:1.2rem}
+.cit-bio{background:linear-gradient(135deg,#2C1810,#5C3D2E);border-radius:16px;padding:2rem 2.5rem;margin:2rem 0;position:relative;overflow:hidden}
+.cit-bio::before{content:'"';font-family:'Lora',serif;font-size:8rem;position:absolute;top:-1rem;left:1.5rem;color:rgba(245,200,66,.08);line-height:1}
+.cit-bio p{font-family:'Lora',serif;font-style:italic;font-size:1rem;color:rgba(255,255,255,.9);line-height:1.8;position:relative;z-index:1;margin-bottom:.8rem}
+.cit-bio .cit-author{font-size:.82rem;color:var(--yellow);font-weight:600}
+.fiscal-box{background:var(--yellow-light);border:1.5px solid var(--yellow);border-radius:14px;padding:1.2rem 1.5rem;display:flex;align-items:center;gap:1rem;margin-bottom:2rem}
+.cloud-wrap{position:relative;width:220px;height:138px;margin:1.5rem auto 0;cursor:pointer}
+.cloud-play{position:absolute;width:42px;height:42px;background:rgba(245,200,66,.92);border-radius:50%;display:flex;align-items:center;justify-content:center;top:50%;left:50%;transform:translate(-50%,-50%);z-index:3;cursor:pointer;transition:transform .2s}
+.cloud-play:hover{transform:translate(-50%,-50%) scale(1.1)}
+.cloud-label{text-align:center;margin-top:.5rem;font-family:'Caveat',cursive;font-size:.95rem;color:var(--terra);font-weight:600}
+.portrait-circle-big{width:200px;height:200px;border-radius:50%;background:linear-gradient(135deg,var(--yellow),var(--yellow-warm));margin:0 auto 1.5rem;box-shadow:0 12px 40px rgba(44,24,16,.2);overflow:hidden}
+.portrait-circle-big img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.founder-name-big{font-family:'Caveat',cursive;font-size:1.6rem;font-weight:700;color:var(--text);margin-bottom:.3rem;text-align:center}
+.founder-title-big{font-size:.85rem;color:var(--terra);font-weight:600;text-transform:uppercase;letter-spacing:.08em;margin-bottom:1.2rem;text-align:center}
+.founder-tag{background:var(--yellow-light);border-radius:12px;padding:.7rem 1rem;font-size:.82rem;color:var(--muted);margin-bottom:.7rem}
+
+/* ── CONTACT ── */
+.contact-section{padding:5rem 2rem;text-align:center;background:white}
+
+/* ── STAY (merged newsletter + contact) ── */
+.stay-section{padding:5rem 2rem;background:white}
+.stay-inner{max-width:1100px;margin:0 auto}
+.stay-head{text-align:center;margin-bottom:3rem}
+.stay-head .s-body{max-width:560px}
+.stay-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;align-items:stretch}
+@media(max-width:780px){.stay-grid{grid-template-columns:1fr;gap:1.2rem}}
+.stay-card{background:var(--cream);border:1.5px solid rgba(245,200,66,.4);border-radius:var(--r);padding:2.2rem 2rem;text-align:center;display:flex;flex-direction:column;align-items:center;position:relative;transition:transform .25s,box-shadow .25s,border-color .25s}
+.stay-card:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(0,0,0,.08);border-color:rgba(245,200,66,.7)}
+.stay-card-news{background:linear-gradient(180deg,#FFF9E8 0%,var(--cream) 100%)}
+.stay-card-contact{background:linear-gradient(180deg,#FFF4ED 0%,var(--cream) 100%);border-color:rgba(200,92,58,.3)}
+.stay-card-icon{width:54px;height:54px;border-radius:50%;background:white;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1rem;box-shadow:0 4px 14px rgba(0,0,0,.06)}
+.stay-card h3{font-family:'Caveat',cursive;font-size:1.7rem;color:var(--text);line-height:1.2;margin-bottom:.5rem;font-weight:700}
+.stay-card>p{font-family:'Lora',serif;font-style:italic;color:var(--muted);font-size:.95rem;margin-bottom:1.4rem;line-height:1.6;max-width:380px}
+.stay-card .newsletter-form{width:100%;max-width:420px}
+.stay-card-actions{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin-bottom:.4rem}
+.stay-card-note{font-family:'Lora',serif;font-style:italic;font-size:.78rem;color:var(--light);margin-top:1rem}
+.stay-card-note a{color:var(--muted);text-decoration:underline}
+
+/* ── PARTENAIRES ── */
+.partners-section{background:var(--yellow-light);padding:5rem 2rem}
+.partners-inner{max-width:1100px;margin:0 auto}
+.partners-head{text-align:center;margin-bottom:2.5rem}
+.partners-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.partner-card{background:white;border-radius:14px;padding:1rem 1rem;text-decoration:none;border:1.5px solid rgba(245,200,66,.3);transition:transform .25s,box-shadow .25s,border-color .25s;display:flex;flex-direction:column;align-items:center;text-align:center;gap:.55rem}
+.partner-card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(44,24,16,.1);border-color:var(--yellow)}
+.partner-logo{width:140px;height:48px;display:flex;align-items:center;justify-content:center}
+.partner-logo svg{max-width:100%;max-height:100%;display:block}
+.partner-name{font-family:'Caveat',cursive;font-size:1.15rem;font-weight:700;color:var(--text);line-height:1.1}
+.partner-type{font-size:.7rem;color:var(--terra);font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.partner-desc{font-size:.78rem;color:var(--muted);line-height:1.45;margin:.15rem 0 .25rem}
+.partner-url{font-size:.72rem;color:var(--yellow-warm);font-weight:600;margin-top:auto}
+
+/* ── STICKY CTA MOBILE ── */
+.sticky-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:99;background:white;padding:.7rem .8rem calc(.7rem + env(safe-area-inset-bottom,0));box-shadow:0 -6px 24px rgba(44,24,16,.15);gap:.6rem;align-items:center;justify-content:center;border-top:1.5px solid rgba(245,200,66,.25)}
+@media(max-width:768px){.sticky-cta{display:flex}body{padding-bottom:80px}}
+.sticky-cta a{flex:1;text-align:center;padding:.85rem .6rem;border-radius:var(--rpill);font-size:.86rem;font-weight:600;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:5px;transition:transform .15s,box-shadow .2s}
+.sticky-cta a:active{transform:scale(.97)}
+.sticky-cta .scta-1{background:rgba(245,200,66,.18);color:var(--brown);border:1.5px solid var(--yellow)}
+.sticky-cta .scta-2{background:var(--terra);color:white;box-shadow:0 4px 14px rgba(200,92,58,.25)}
+
+/* Mobile - masquer la nav top quand le sticky-cta est visible et scroll */
+@media(max-width:768px){
+  .nav.hidden-mobile{transform:translateY(-100%);transition:transform .3s ease}
+  .hero{padding:5rem 1.2rem 4rem}
+  .formula-grid{gap:1.2rem}
+  .testi-grid{gap:1rem}
+  .feats{gap:1rem}
+  .dates-grid{gap:1.2rem}
+  .impact-flags{gap:.7rem;font-size:.85rem}
+  .partner-card{padding:.9rem .7rem}
+  .qsn-grid{gap:1.5rem}
+  .infograph{padding:1.8rem 1.2rem}
+  .infograph-bar{height:50px}
+  .infograph-seg .pct{font-size:1.1rem}
+  .transparence{padding:1.6rem 1.4rem}
+  .faq-q{padding:1rem 1.2rem;font-size:.92rem}
+  .stamp-approved{width:68px;height:52px;top:.8rem;right:.5rem}
+  .stamp-approved-main{font-size:.88rem}
+  .stamp-approved-sub{font-size:.7rem}
+}
+
+/* ── FOOTER ── */
+footer{background:var(--text);color:rgba(255,255,255,.8);padding:4rem 2rem 2rem}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+@media(max-width:700px){.footer-inner{grid-template-columns:1fr}}
+.footer-brand h2{font-family:'Caveat',cursive;font-size:2.2rem;color:var(--yellow);margin-bottom:.5rem}
+.footer-brand p{font-family:'Lora',serif;font-style:italic;font-size:.92rem;color:rgba(255,255,255,.6);line-height:1.7;max-width:300px}
+.footer-col h4{font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--yellow);margin-bottom:1rem}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.footer-col ul li a{font-size:.88rem;color:rgba(255,255,255,.65);text-decoration:none;transition:color .2s}
+.footer-col ul li a:hover{color:var(--yellow)}
+.footer-bot{max-width:1100px;margin:0 auto;border-top:1px solid rgba(255,255,255,.1);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;font-size:.8rem;color:rgba(255,255,255,.4)}
+
+/* ── LIGHTBOX ── */
+.lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:1000;align-items:center;justify-content:center;padding:2rem}
+.lightbox.open{display:flex}
+.lightbox img{max-width:90vw;max-height:85vh;object-fit:contain;border-radius:8px;user-select:none;-webkit-user-drag:none}
+.lb-close{position:absolute;top:1.5rem;right:2rem;background:none;border:none;color:white;font-size:2rem;cursor:pointer;z-index:2}
+.lb-prev,.lb-next{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.18);color:white;font-size:2.4rem;width:54px;height:54px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1;padding:0 0 6px;transition:background .2s,transform .2s;z-index:2;font-family:Georgia,serif}
+.lb-prev{left:1.5rem}
+.lb-next{right:1.5rem}
+.lb-prev:hover,.lb-next:hover{background:rgba(0,0,0,.78);transform:translateY(-50%) scale(1.07)}
+.lb-counter{position:absolute;bottom:1.2rem;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.7);font-family:'Inter',sans-serif;font-size:.8rem;letter-spacing:.05em;background:rgba(0,0,0,.4);padding:.35rem .9rem;border-radius:99px}
+@media(max-width:600px){.lb-prev,.lb-next{width:44px;height:44px;font-size:2rem}.lb-prev{left:.5rem}.lb-next{right:.5rem}}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+
+@media(max-width:900px){
+  nav{padding:0 1rem}
+  .nav-links{display:none}
+  .terrain-grid{grid-template-columns:1fr}
+}
+
+/* ── HELLOASSO MODAL ── */
+.ha-modal{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;background:rgba(44,24,16,.78);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);padding:2rem;animation:haFade .25s ease}
+.ha-modal.open{display:flex}
+@keyframes haFade{from{opacity:0}to{opacity:1}}
+.ha-modal-card{position:relative;width:100%;max-width:560px;height:min(92vh,820px);background:#fff;border-radius:var(--rlg);overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.4);display:flex;flex-direction:column;animation:haPop .3s cubic-bezier(.2,.9,.3,1.2)}
+@keyframes haPop{from{transform:translateY(20px) scale(.96);opacity:0}to{transform:translateY(0) scale(1);opacity:1}}
+.ha-modal-head{display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.1rem;background:var(--cream,#faf6ef);border-bottom:1px solid rgba(44,24,16,.08);flex-shrink:0}
+.ha-modal-head .ha-title{font-family:var(--display,Georgia,serif);font-size:1.05rem;color:var(--brown,#2c1810);font-weight:600;display:flex;align-items:center;gap:.5rem}
+.ha-modal-head .ha-title .dot{width:8px;height:8px;border-radius:50%;background:var(--terra,#c85c3a);box-shadow:0 0 0 4px rgba(200,92,58,.18)}
+.ha-modal-close{background:rgba(44,24,16,.06);border:none;width:36px;height:36px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--brown,#2c1810);transition:all .15s ease;line-height:1}
+.ha-modal-close:hover{background:rgba(44,24,16,.14);transform:rotate(90deg)}
+.ha-modal-body{flex:1;position:relative;background:#fff;overflow:hidden}
+.ha-modal-body iframe{width:100%;height:100%;border:0;display:block}
+.ha-modal-body .ha-loading{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;color:var(--brown,#2c1810);font-size:.9rem}
+.ha-modal-body .ha-loading .spin{width:32px;height:32px;border:3px solid rgba(200,92,58,.2);border-top-color:var(--terra,#c85c3a);border-radius:50%;animation:haSpin .8s linear infinite}
+@keyframes haSpin{to{transform:rotate(360deg)}}
+.ha-modal-foot{padding:.55rem .9rem;background:var(--cream,#faf6ef);border-top:1px solid rgba(44,24,16,.08);font-size:.72rem;color:var(--light,#6b5a4f);text-align:center;display:flex;align-items:center;justify-content:center;gap:.6rem;flex-shrink:0}
+.ha-modal-foot a{color:var(--terra,#c85c3a);text-decoration:none;font-weight:600}
+.ha-modal-foot a:hover{text-decoration:underline}
+@media(max-width:768px){
+  .ha-modal{padding:0}
+  .ha-modal-card{max-width:100%;height:100vh;height:100dvh;border-radius:0}
+}
+</style>
+<!--
+  ╭───────────────────────────────────────────────────────────────╮
+  │  ANALYTICS — emplacement pour ton tracking                    │
+  │  Décommenter et coller l'ID quand le compte sera créé.        │
+  │                                                                │
+  │  Option recommandée : Plausible Analytics (RGPD-friendly,     │
+  │  pas de bandeau cookies requis).                              │
+  │                                                                │
+  │  <script defer data-domain="rejoice.ngo"                      │
+  │    src="https://plausible.io/js/script.js"></script>          │
+  │                                                                │
+  │  Alternative : Google Analytics 4 (nécessite bandeau cookies) │
+  │  <script async src="https://www.googletagmanager.com/gtag/    │
+  │    js?id=G-XXXXXXXXXX"></script>                              │
+  │  <script>                                                      │
+  │    window.dataLayer = window.dataLayer || [];                 │
+  │    function gtag(){dataLayer.push(arguments);}                │
+  │    gtag('js', new Date());                                    │
+  │    gtag('config', 'G-XXXXXXXXXX');                            │
+  │  </script>                                                     │
+  ╰───────────────────────────────────────────────────────────────╯
+
+  ╭───────────────────────────────────────────────────────────────╮
+  │  HOTJAR — emplacement pour le tracking comportemental         │
+  │  Décommenter et remplacer XXXXXXX par ton ID Hotjar.          │
+  │                                                                │
+  │  <script>                                                      │
+  │    (function(h,o,t,j,a,r){                                    │
+  │      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};│
+  │      h._hjSettings={hjid:XXXXXXX,hjsv:6};                     │
+  │      a=o.getElementsByTagName('head')[0];                     │
+  │      r=o.createElement('script');r.async=1;                   │
+  │      r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;         │
+  │      a.appendChild(r);                                         │
+  │    })(window,document,'https://static.hotjar.com/c/hotjar-',  │
+  │       '.js?sv=');                                              │
+  │  </script>                                                     │
+  ╰───────────────────────────────────────────────────────────────╯
+-->
+</head>
+<body>
+
+<!-- ──────────── PHASE 1 — ACCROCHE ──────────── -->
+
+<nav id="mainNav">
+  <a href="#" class="nav-logo">
+    <img src="img/extracted/inline-5f4e9e2f.png" alt="Rejoice" style="height:50px;width:auto;display:block">
+  </a>
+  <ul class="nav-links">
+    <li><a href="#principe">How it works</a></li>
+    <li><a href="#sejours">Retreats</a></li>
+    <li><a href="#impact">Impact</a></li>
+    <li><a href="#qui-sommes-nous">About us</a></li>
+    <li><a href="https://www.helloasso.com/associations/rejoice-63/accueil" target="_blank" rel="noopener" class="nav-cta">Donate</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-bg-img" style="background-image:url('img/extracted/inline-c6c62fb9.jpg')"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">✦ French non-profit (loi 1901) — rejoice.ngo ✦</div>
+    <img src="img/extracted/inline-f095e93d.png" alt="Rejoice" class="hero-logo">
+    <h1 class="hero-h1">Take care of yourself,<br><span>take care of them.</span></h1>
+    <p class="hero-sub">Rejoice brings together two needs that seem worlds apart:<br><span class="hl">your need to restore yourself, and</span><br><span class="hl">that of underprivileged children on the other side of the world.</span><br>Here, the two nourish each other.</p>
+    <div class="hero-actions">
+      <a href="#sejours" class="btn btn-p">✦ See the retreats</a>
+      <a href="#soutenir" class="btn btn-o" style="color:white;border-color:rgba(255,255,255,.6)">Donate</a>
+    </div>
+  </div>
+  <div class="scroll-hint">↓</div>
+</div>
+
+<div class="impact-band">
+  <div class="impact-band-inner">
+    <div class="impact-stat"><div class="impact-num">200+</div><div class="impact-lbl">children supported</div></div>
+    <div class="impact-stat"><div class="impact-num">2 years</div><div class="impact-lbl">of active engagement</div></div>
+    <div class="impact-stat"><div class="impact-num">66%</div><div class="impact-lbl">tax deduction (FR taxpayers)</div></div>
+  </div>
+</div>
+
+<!-- ──────────── PHASE 2 — COMPRÉHENSION + CONFIANCE ──────────── -->
+
+<div class="principe reveal" id="principe">
+  <div class="principe-inner">
+    <p class="s-label" style="margin-bottom:.5rem">The virtuous circle</p>
+    <h2>The Rejoice principle</h2>
+    <p class="principe-sub">A simple idea, a rare alchemy.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>You travel</h3>
+        <p>You join a small-group restorative retreat — La Poumerole (Auvergne), Nepal, Norway… A space to breathe, connect, come back to yourself.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>You come back transformed</h3>
+        <p>Authentic encounters, practical tools, surprises. You leave revitalized, with a new inner compass.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Children get supported</h3>
+        <p>Part of your retreat directly funds our actions: schools, training centers, orphanages in India and Nepal.</p>
+      </div>
+    </div>
+    <div class="principe-conclusion">
+      <p>"By restoring yourself here, you help children there.<br><strong>Your well-being becomes their chance: that's the Rejoice principle!</strong><br>And that's why we don't look like any other charity!"</p>
+    </div>
+  </div>
+</div>
+
+<div class="band reveal" style="background:var(--yellow)">
+  <div style="position:absolute;inset:0;overflow:hidden;pointer-events:none">
+    <div style="position:absolute;width:400px;height:400px;border-radius:50%;background:var(--brown);opacity:.1;top:-150px;right:-100px"></div>
+    <div style="position:absolute;width:280px;height:280px;border-radius:50%;background:var(--brown);opacity:.1;bottom:-120px;left:-80px"></div>
+  </div>
+  <div class="band-in">
+    <p class="s-label" style="color:var(--brown)">Choisissez votre façon</p>
+    <h2 class="band-title" style="color:var(--text)">Two ways to join the adventure</h2>
+    <p class="band-sub" style="color:var(--brown)">Whether you join a retreat or support from home, in both cases,<br>every euro goes directly to the field.</p>
+    <div class="formula-grid">
+      <div class="f-card std">
+        <img src="img/extracted/inline-c6c62fb9.jpg" alt="Soutien financier" class="f-card-photo">
+        <span class="f-badge std">Classic option</span>
+        <h3>Support without traveling</h3>
+        <p>You directly fund our field projects. Simple, transparent, 100% goes to the children we support.</p>
+        <ul>
+          <li>One-time or monthly donation</li>
+          <li>66% tax deduction (FR taxpayers — see FAQ)</li>
+          <li>Regular field reports</li>
+          <li>Automatic tax receipt</li>
+          <li>Secure payment via HelloAsso</li>
+        </ul>
+        <a href="#soutenir" class="btn btn-o" style="width:100%;justify-content:center">Donate</a>
+      </div>
+      <div class="f-card feat">
+        <img src="img/extracted/panorama-8c969949.jpg" alt="View from La Poumerole" class="f-card-photo">
+        <span class="f-badge feat">The Rejoice option</span>
+        <h3>Travel &amp; help</h3>
+        <p>You experience a transformative retreat in exceptional places. Your restoration directly funds children — both at the same time.</p>
+        <ul>
+          <li>Small groups (~12 people)</li>
+          <li>Authentic encounters &amp; surprises</li>
+          <li>Practical tools to leave revitalized</li>
+          <li>Coming back to yourself in exceptional places</li>
+          <li>Your retreat funds our missions</li>
+        </ul>
+        <a href="#sejours" class="btn btn-p" style="width:100%;justify-content:center">See upcoming retreats ✦</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="founder-short reveal">
+  <div class="founder-short-inner">
+    <div class="founder-short-portrait">
+      <img src="img/extracted/inline-f5f6403e.jpg" alt="Laurent Perraud, président de Rejoice">
+    </div>
+    <div>
+      <span class="founder-short-label">Who runs Rejoice</span>
+      <h3>Laurent Perraud</h3>
+      <div class="founder-short-role">Founder &amp; president · former pro snowboarder, SME executive</div>
+      <p class="founder-short-quote">"This is my commitment:<br>to be on the ground, the steward and guarantor<br>of the actions stemming from your generosity.<br>Every euro forwarded, every project followed through over time."</p>
+      <a href="#qui-sommes-nous" class="founder-short-link">Discover the full story →</a>
+    </div>
+    <div class="founder-short-cloud" id="founderCloudMini">
+      <div class="founder-short-cloud-svg">
+        <svg viewBox="0 0 380 240" preserveAspectRatio="xMidYMid meet">
+          <defs><clipPath id="cloudClipMini" clipPathUnits="objectBoundingBox"><path d="M0.158,0.833 Q0.026,0.833 0.026,0.646 Q0.026,0.521 0.092,0.479 Q0.079,0.417 0.079,0.354 Q0.079,0.208 0.171,0.167 Q0.184,0.063 0.276,0.063 Q0.329,0.021 0.395,0.042 Q0.434,0.008 0.487,0.021 Q0.566,0 0.632,0.063 Q0.697,0.042 0.75,0.125 Q0.842,0.104 0.895,0.229 Q0.987,0.25 0.987,0.396 Q1,0.458 0.961,0.542 Q0.987,0.583 0.987,0.667 Q0.987,0.813 0.895,0.833 Z"/></clipPath></defs>
+          <path d="M60,200 Q10,200 10,155 Q10,125 35,115 Q30,100 30,85 Q30,50 65,40 Q70,15 105,15 Q125,5 150,10 Q165,2 185,5 Q215,0 240,15 Q265,10 285,30 Q320,25 340,55 Q370,60 370,95 Q375,110 365,130 Q375,140 375,160 Q375,195 340,200 Z" fill="rgba(245,200,66,0.12)" stroke="rgba(245,200,66,0.6)" stroke-width="2.5"/>
+        </svg>
+        <div class="vidwrap">
+          <video id="founderCloudVideo" src="REJOICE_ITW_FONDATEUR_FR.mp4" preload="none" playsinline></video>
+          <div id="founderCloudFallback" class="vid-fallback">Vidéo<br>présentation</div>
+        </div>
+        <div class="founder-short-cloud-play" id="founderCloudPlay">
+          <svg width="14" height="16" viewBox="0 0 20 22" fill="none"><path d="M3 2L17 11L3 20V2Z" fill="#2C1810"/></svg>
+        </div>
+      </div>
+      <div class="founder-short-cloud-label">✦ Watch Laurent's video</div>
+    </div>
+  </div>
+</div>
+
+<div class="testi-section reveal">
+  <div class="testi-inner">
+    <div class="testi-head">
+      <p class="s-label">They lived it</p>
+      <h2 class="s-title">Des aventures qui marquent</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <p class="testi-text">"Je suis rentré de ce séjour avec quelque chose d'indéfinissable. Pas seulement ressourcé — transformé. Les rencontres, la simplicité, l'authenticité… je n'aurais pas vécu ça autrement."</p>
+        <div class="testi-author">Matthieu R.</div><div class="testi-role">Séjour Auvergne, 2023</div>
+      </div>
+      <div class="testi-card">
+        <p class="testi-text">"I was exhausted, at the end of my rope. This retreat taught me to find myself again. No grand speeches — just real moments, simple tools, and a team that truly cares."</p>
+        <div class="testi-author">Isabelle M.</div><div class="testi-role">Séjour Népal, 2024</div>
+      </div>
+      <div class="testi-card">
+        <p class="testi-text">"What struck me: you give and receive at the same time. Helping the children while rebuilding myself… that's a rare alchemy. I'd recommend it to anyone looking for meaning."</p>
+        <div class="testi-author">Thomas V.</div><div class="testi-role">India retreat, 2023</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ──────────── PHASE 3 — SÉJOURS (parcours conversion 1) ──────────── -->
+
+<section id="sejours" class="reveal" style="padding-bottom:1rem">
+  <p class="s-label">Rejoice retreats</p>
+  <h2 class="s-title">A human adventure that restores you</h2>
+  <p class="s-body">Worn down by stress and a runaway daily life? Our retreats offer a rare space: coming back to yourself.<br>Twelve people, an exceptional setting, real encounters, practical tools.</p>
+</section>
+
+<div style="padding:2rem;max-width:1100px;margin:0 auto">
+  <div class="gallery reveal" id="gallery"></div>
+</div>
+
+<!-- ── PROCHAINS SÉJOURS — CARTES AVEC DATES ── -->
+<div class="dates-section reveal">
+  <div class="dates-head">
+    <p class="s-label">Calendar</p>
+    <h3>Upcoming &amp; past retreats</h3>
+    <p>Three dates, three different energies — always twelve people maximum.</p>
+  </div>
+  <div class="dates-grid">
+
+    <div class="date-card passed">
+      <div class="date-card-header">
+        <div class="stamp-approved">
+          <span class="stamp-approved-main">Approved!</span>
+          <span class="stamp-approved-sub">by 12 hearts</span>
+        </div>
+        <div class="date-card-status">Past retreat</div>
+        <div class="date-card-date">April 9–12</div>
+        <div class="date-card-year">2025 · La Poumerole</div>
+      </div>
+      <div class="date-card-body">
+        <div>🇫🇷 Auvergne — 19th-century estate</div>
+        <div>👥 12 participants</div>
+        <div>🌿 Full board</div>
+        <p class="date-card-quote">"A rare moment of pause, a wonderful group. I'd do it again with my eyes closed."<br><span class="date-card-quote-author">— 2025 participant feedback</span></p>
+      </div>
+      <a href="#gallery" class="date-card-cta secondary">See the retreat photos →</a>
+    </div>
+
+    <div class="date-card featured">
+      <div class="date-card-header">
+        <div class="date-card-places">3 spots left</div>
+        <div class="date-card-status">Next retreat</div>
+        <div class="date-card-date">July 30 – Aug 2</div>
+        <div class="date-card-year">2026 · La Poumerole</div>
+      </div>
+      <div class="date-card-body">
+        <div>🇫🇷 Auvergne — bâtisse XIXᵉ</div>
+        <div>👥 Max 12 participants</div>
+        <div>🌿 Pension complète</div>
+        <p class="date-card-tagline">Heart of summer — walks, sharing circles, coming back to yourself under the sun.</p>
+      </div>
+      <a href="#formulaire-sejour" class="date-card-cta primary">✦ Book my spot</a>
+    </div>
+
+    <div class="date-card upcoming">
+      <div class="date-card-header">
+        <div class="date-card-status">Autumn 2026</div>
+        <div class="date-card-date">October 2026</div>
+        <div class="date-card-year">dates being finalized · La Poumerole</div>
+      </div>
+      <div class="date-card-body">
+        <div>🇫🇷 Auvergne — bâtisse XIXᵉ</div>
+        <div>👥 12 participants max</div>
+        <div>🌿 Pension complète</div>
+        <p class="date-card-tagline">Autumn colors, cozy fireplace evenings, year-end reflections.</p>
+      </div>
+      <a href="#newsletter" class="date-card-cta tertiary">Add me to the waiting list</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── FORMULAIRE SÉJOUR ── -->
+<div style="padding:0 2rem;margin:0 auto" id="formulaire-sejour">
+  <div class="sejour-form reveal">
+    <div class="sejour-form-head">
+      <p class="s-label" style="text-align:center">Request information</p>
+      <h3>Book my spot or ask a question</h3>
+      <p>Fill in the fields below — your email client will open with a pre-filled message.</p>
+    </div>
+    <form onsubmit="return submitSejourForm(event)">
+      <div class="sejour-form-grid">
+        <div class="sejour-form-field">
+          <label for="sf-name">First &amp; last name</label>
+          <input type="text" id="sf-name" name="name" required placeholder="Your full name">
+        </div>
+        <div class="sejour-form-field">
+          <label for="sf-email">Email</label>
+          <input type="email" id="sf-email" name="email" required placeholder="you@example.com">
+        </div>
+        <div class="sejour-form-field">
+          <label for="sf-phone">Phone <span style="font-weight:400;text-transform:none;color:var(--light)">(optional)</span></label>
+          <input type="tel" id="sf-phone" name="phone" placeholder="+33 6 ..">
+        </div>
+        <div class="sejour-form-field">
+          <label for="sf-sejour">Retreat of interest</label>
+          <select id="sf-sejour" name="sejour" required>
+            <option value="">Select a retreat…</option>
+            <option value="ete-2026">July 30 – Aug 2, 2026 (Auvergne)</option>
+            <option value="automne-2026">Autumn 2026 (Auvergne, dates TBC)</option>
+            <option value="liste-attente">Join the waiting list</option>
+            <option value="autre">Other / General question</option>
+          </select>
+        </div>
+        <div class="sejour-form-field full">
+          <label for="sf-message">Your message</label>
+          <textarea id="sf-message" name="message" required placeholder="What appeals to you about this retreat, your questions, any constraints…"></textarea>
+        </div>
+      </div>
+      <button type="submit" class="sejour-form-cta">✦ Send my request</button>
+      <p class="sejour-form-note">Your message will open in your email client pre-filled — it will only be sent once you confirm.<br>Rejoice does not store any data through this form. <a href="privacy-policy.html" style="color:var(--terra);text-decoration:none;border-bottom:1px solid rgba(200,92,58,.3)">Privacy policy</a></p>
+    </form>
+  </div>
+</div>
+
+<div class="poum-block reveal">
+  <h2>La Poumerole — our home base</h2>
+  <p style="text-align:justify">In the heart of the Puy-de-Dôme region, a 19th-century stone estate nestled among centuries-old lime and oak trees.<br>Stunning views over the valley of volcanoes. A place where time truly stands still.</p>
+  <div class="poum-details">
+    <div class="poum-detail"><strong>Location</strong>Charensat, Auvergne</div>
+    <div class="poum-detail"><strong>Capacity</strong>~12 participants</div>
+    <div class="poum-detail"><strong>Lodging</strong>Full board</div>
+    <div class="poum-detail"><strong>6 km away</strong>Largest Buddhist center in Europe</div>
+  </div>
+  <div class="poum-img-strip" id="poumStrip"></div>
+  <a href="https://lapoumerole.org" target="_blank" rel="noopener" class="btn btn-s">See the place →</a>
+</div>
+
+<div class="sejour-block reveal" style="margin-top:3rem">
+  <p class="s-label">What you'll experience</p>
+  <h3 style="font-family:Caveat,cursive;font-size:1.9rem;font-weight:700;margin-bottom:1rem;color:var(--text)">A retreat full of surprises &amp; authenticity</h3>
+  <div class="feats">
+    <div class="feat"><img class="feat-photo" data-imgkey="SUNSET_POUM" alt="Coucher de soleil sur La Poumerole"><h4>Coming back to yourself</h4><p>Space to breathe, to find your inner compass again.</p></div>
+    <div class="feat"><img class="feat-photo" data-imgkey="HIKE" alt="Balade au coucher du soleil"><h4>Real connections</h4><p>Authentic moments of life, conversations that leave a mark.</p></div>
+    <div class="feat"><img class="feat-photo" data-imgkey="IKER_02" alt="Outils concrets"><h4>Practical tools</h4><p>Leave with solid anchors for everyday life.</p></div>
+    <div class="feat"><img class="feat-photo" data-imgkey="GROUP" alt="Un groupe engagé"><h4>Meaning &amp; commitment</h4><p>Your presence directly contributes to Rejoice's actions.</p></div>
+  </div>
+  <p class="s-label">Retreat destinations</p>
+  <div class="locs">
+    <span class="loc-pill">🇫🇷 Auvergne — La Poumerole</span>
+    <span class="loc-pill">🇳🇴 Norway</span>
+    <span class="loc-pill">🇲🇦 Morocco</span>
+    <span class="loc-pill">🇨🇿 Czech Republic</span>
+    <span class="loc-pill">🇳🇵 Nepal</span>
+    <span class="loc-pill" style="background:var(--yellow-light);border-style:dashed;color:var(--brown);font-style:italic">✦ New destinations coming soon</span>
+  </div>
+</div>
+
+<div class="cta-mid reveal">
+  <div class="cta-mid-inner">
+    <h3>Ready for an adventure that changes something?</h3>
+    <p>Let's talk about the retreat that suits you.</p>
+    <a href="#contact" class="btn btn-p">I'd like to know more ✦</a>
+  </div>
+</div>
+
+<!-- ──────────── PHASE 4 — IMPACT TERRAIN (parcours conversion 2) ──────────── -->
+
+<div class="impact-section reveal" id="impact">
+  <div class="impact-inner">
+    <!-- 4 PILIERS D'ENGAGEMENT (entrée de section) -->
+    <div style="text-align:center;margin-bottom:2rem">
+      <p class="s-label">Our mission on the ground</p>
+      <h2 class="s-title">Four pillars of commitment</h2>
+    </div>
+    <div class="missions-grid" style="margin-bottom:3.5rem">
+      <div class="m-card"><img class="m-card-photo" data-imgkey="PILIER_ECOLE" alt="Écoles"><div class="m-card-body"><h4>Schools</h4><p>Construction and support for students to meet their needs and education in low-resource areas.</p></div></div>
+      <div class="m-card"><img class="m-card-photo" data-imgkey="PILIER_HANDICAP" alt="Handicap"><div class="m-card-body"><h4>Disability support</h4><p>Support and inclusion for people with disabilities.</p></div></div>
+      <div class="m-card"><img class="m-card-photo" data-imgkey="PILIER_URGENCE" alt="Aide d'urgence"><div class="m-card-body"><h4>Emergency aid</h4><p>Rapid response to humanitarian crises, with a dedicated emergency fund.</p></div></div>
+      <div class="m-card"><img class="m-card-photo" data-imgkey="PILIER_ORPHELINAT" alt="Orphelinats"><div class="m-card-body"><h4>Orphanages</h4><p>Funding for facilities and related expenses to ensure children's safety, schooling and future.</p></div></div>
+    </div>
+
+    <!-- BLOC IMPACT TERRAIN (basculé après les piliers) -->
+    <div style="text-align:center;max-width:780px;margin:0 auto 2rem">
+      <p class="s-label">Field impact</p>
+      <h2 class="s-title">Where your support goes</h2>
+      <div class="impact-flags">
+        <span>🇮🇳 India</span><span class="sep">·</span>
+        <span>🇳🇵 Nepal</span><span class="sep">·</span>
+        <span>🇨🇿 Czech Rep.</span><span class="sep">·</span>
+        <span>🇫🇷 France</span>
+      </div>
+      <p class="s-body" style="margin:0 auto">Lasting partnerships, not humanitarian tourism.<br>We follow every project over time, with regular field visits.</p>
+    </div>
+
+    <div class="proj-filters">
+      <button class="proj-filter active" data-filter="all">All projects</button>
+      <button class="proj-filter" data-filter="inde">🇮🇳 India</button>
+      <button class="proj-filter" data-filter="nepal">🇳🇵 Nepal</button>
+    </div>
+    <div class="proj-grid" id="projGrid"></div>
+
+    <div class="terrain-gallery">
+      <div class="terrain-head">
+        <h3>Field gallery — B.I.A. Nepal &amp; K.C.E. India</h3>
+      </div>
+      <div class="terrain-hero js-lb" onclick="openLB(this)">
+        <img id="th_hero" src="" alt="Mains en prière, centre KCE">
+        <div class="terrain-hero-overlay"></div>
+        <div class="terrain-hero-cap"><h4>Un moment de prière partagé</h4><p>Centre KCE · Inde</p></div>
+      </div>
+      <div class="terrain-grid">
+        <div class="terrain-cell js-lb" onclick="openLB(this)"><img id="th_1" src="" alt="Portrait, KCE"></div>
+        <div class="terrain-cell js-lb" onclick="openLB(this)"><img id="th_2" src="" alt="Young monk, KCE"></div>
+        <div class="terrain-cell js-lb" onclick="openLB(this)"><img id="th_3" src="" alt="Child, KCE"></div>
+      </div>
+      <div class="terrain-grid21">
+        <div class="terrain-wide js-lb" onclick="openLB(this)"><img id="th_kids" src="" alt="Groupe d'enfants KCE"></div>
+        <div class="terrain-small-col">
+          <div class="terrain-small js-lb" onclick="openLB(this)"><img id="th_4" src="" alt="KCE 4"></div>
+          <div class="terrain-small js-lb" onclick="openLB(this)"><img id="th_5" src="" alt="KCE 5"></div>
+        </div>
+      </div>
+      <div class="terrain-grid">
+        <div class="terrain-cell js-lb" onclick="openLB(this)" style="aspect-ratio:auto"><img id="th_c2" src="" alt="Disability center" style="height:240px"></div>
+        <div class="terrain-cell js-lb" onclick="openLB(this)" style="aspect-ratio:auto"><img id="th_tiff3" src="" alt="Child planting" style="height:240px;object-position:center 30%"></div>
+        <div class="terrain-cell js-lb" onclick="openLB(this)" style="aspect-ratio:auto"><img id="th_c4" src="" alt="Rural school" style="height:240px"></div>
+      </div>
+      <div class="terrain-quote">
+        <div style="flex:1">
+          <p>"Every visit to India reminds us why we do this work. The children and families we support give us infinitely more than we bring them."</p>
+          <div class="author">— The Rejoice team — India</div>
+        </div>
+        <div style="flex-shrink:0"><a href="#soutenir" class="btn btn-s">Support this project</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="don-section reveal" id="soutenir">
+  <div class="don-inner">
+    <p class="s-label">Join the movement</p>
+    <h2 class="s-title">Your support makes the difference</h2>
+    <p class="s-body" style="margin:0 auto .8rem">Every euro donated goes directly to the field. As a French non-profit (loi 1901), donations qualify for a 66% tax reduction in France (75% under IFI). See FAQ for international donors.</p>
+    <p style="font-size:.85rem;color:var(--terra);font-weight:600;margin-bottom:2.5rem">€100 donated = just €34 net cost after FR tax reduction</p>
+    <div class="don-amounts">
+      <a href="https://www.helloasso.com/associations/rejoice-63/accueil" target="_blank" rel="noopener" class="don-amt"><span class="amt">€30</span><span class="lbl">Symbolic support</span><span class="red">→ €10.20 net cost</span></a>
+      <a href="https://www.helloasso.com/associations/rejoice-63/accueil" target="_blank" rel="noopener" class="don-amt"><span class="amt">€50</span><span class="lbl">A real gesture</span><span class="red">→ €17 net cost</span></a>
+      <a href="https://www.helloasso.com/associations/rejoice-63/accueil" target="_blank" rel="noopener" class="don-amt" style="border-color:var(--yellow)"><span class="amt">€100</span><span class="lbl">Strong support</span><span class="red">→ €34 net cost</span></a>
+      <a href="https://www.helloasso.com/associations/rejoice-63/accueil" target="_blank" rel="noopener" class="don-amt"><span class="amt">€250</span><span class="lbl">Partenaire actif</span><span class="red">→ €85 net cost</span></a>
+      <a href="https://www.helloasso.com/associations/rejoice-63/accueil" target="_blank" rel="noopener" class="don-amt"><span class="amt">Libre</span><span class="lbl">Votre montant</span><span class="red">→ 66% déduit</span></a>
+    </div>
+    <a href="https://www.helloasso.com/associations/rejoice-63/accueil" target="_blank" rel="noopener" class="btn btn-ha">💛 Donate via HelloAsso</a>
+    <p style="font-size:.78rem;color:var(--light);margin-top:.8rem">Secure payment · automatic tax receipt (FR) · helloasso.com</p>
+
+    <!-- ── INFOGRAPHIE 100€ — VRAIS CHIFFRES BILAN 2025 ── -->
+    <div class="infograph">
+      <div class="infograph-title">Where does your donation go?</div>
+      <div class="infograph-sub">2025 audit — for every €100 you give</div>
+      <div class="infograph-bar" role="img" aria-label="Allocation of €100: €91.80 social missions, €0 fundraising, €8.20 operations">
+        <div class="infograph-seg infograph-seg-1"><div class="pct">€91.80</div></div>
+        <div class="infograph-seg infograph-seg-2"></div>
+        <div class="infograph-seg infograph-seg-3"><div class="pct">€8.20</div></div>
+      </div>
+      <div class="infograph-legend" style="grid-template-columns:1fr 1fr">
+        <div class="infograph-leg"><div class="dot c1"></div><div><strong>€91.80</strong>directly forwarded to field NGOs (orphanages, schools, disability support, emergencies)</div></div>
+        <div class="infograph-leg"><div class="dot c3"></div><div><strong>€8.20</strong>covers field-monitoring travel and banking fees</div></div>
+      </div>
+      <div class="infograph-note"><strong style="color:var(--brown);font-family:'Inter',sans-serif">€0</strong> in fundraising costs — Rejoice spends nothing on marketing or fundraising.<br>2025 accounts presented by OnlyCompta · Séverine GOUJET, certified accountant · April 7, 2026.<br><em>Accounts presentation — not a full audit (appropriate for our size).</em></div>
+    </div>
+
+    <!-- ── FAQ ACCORDEON ── -->
+    <div class="faq" id="faq">
+      <div class="faq-head">
+        <p class="s-label" style="text-align:center">Your questions</p>
+        <h3>Everything we get asked</h3>
+        <p>Click to open an answer — and write to us if yours isn't here.</p>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <span>Is my donation really used on the ground?</span>
+          <span class="faq-q-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes. Laurent Perraud, president of Rejoice, personally goes to the field several times a year (India, Nepal, projects in France) to ensure funds are properly used and to maintain direct relationships with partner organizations.</p>
+          <p>Our principle: <strong>no opaque intermediaries, direct ties with the local NGOs</strong> we support — B.I.A. orphanage in Nepal, K.C.E. school in India, etc.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <span>How much does Rejoice keep for operations?</span>
+          <span class="faq-q-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Rejoice is a young French non-profit (created in 2024). For fiscal year 2025, <strong>91.8% of expenses</strong> went directly to field NGOs as financial aid (€20,000 out of €21,795 total). The <strong>remaining 8.2%</strong> covers Laurent's field-monitoring travel and banking fees.</p>
+          <p>Rejoice operates <strong>without any salary, without marketing costs, without fundraising costs</strong>. The structure is deliberately lean to maximize what reaches the ground.</p>
+          <p>The non-profit built a reserve over 2024–2025: agreements with our field partners (NGOs in India and Nepal) took time to finalize. <strong>These agreements are now in place</strong> and significant amounts are currently being forwarded for the 2026 fiscal year.</p>
+          <p>The 2025 accounts were presented by OnlyCompta (Séverine GOUJET, certified accountant). This is an <em>accounts presentation</em>, the appropriate engagement for our size, not a full audit. <a href="bilan-2025.pdf" download>Download the 2025 financial report (PDF, in French) →</a></p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <span>How does the tax deduction work exactly?</span>
+          <span class="faq-q-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p><strong>Important — applies to French taxpayers only</strong></p>
+          <p>The tax benefits described below apply to taxpayers in France. If you live abroad, please check your local tax rules — most countries do not recognize foreign charitable donations for tax deduction.</p><p><strong>For individuals (French residents):</strong> as a French non-profit of general interest (loi 1901), donations to Rejoice qualify for:</p>
+          <p><strong>66% income tax reduction</strong> (capped at 20% of taxable income). Concretely: if you donate €100, you get €66 back on your taxes — the donation only costs you €34.</p>
+          <p><strong>75% IFI tax reduction</strong> if you pay French Property Wealth Tax (capped at €50,000 in reduction). €100 donated = €25 net cost.</p>
+          <p style="margin-top:1.2rem"><strong>For companies (corporate sponsorship — art. 238 bis of the French Tax Code)</strong></p>
+          <p>French companies receive a <strong>60% tax reduction</strong> on the donation amount, capped at <strong>€20,000 OR 0.5% of pre-tax turnover</strong> — whichever is more advantageous.</p>
+          <p>Concretely: a €1,000 donation only costs the company €400 after the reduction. For SMEs, the 0.5% turnover cap often goes well beyond €20,000. Above the cap, the excess can be <strong>carried over to the next 5 fiscal years</strong>.</p>
+          <p style="margin-top:1.2rem">The tax receipt is generated <strong>automatically by HelloAsso</strong> with each donation and sent to your email (only useful for French taxpayers).</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <span>Can I donate monthly rather than one-off?</span>
+          <span class="faq-q-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes — and it's actually our preferred option: a monthly donation, even modest, lets us plan our field commitments over time. HelloAsso offers this option directly in the donation form, and you can stop it at any time.</p>
+          <p>€10/month = €120/year = <strong>€40.80 net after the FR tax reduction</strong>.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <span>What if I want to support a specific project?</span>
+          <span class="faq-q-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>It's possible: you can specify in the message field when donating via HelloAsso (or by email to <a href="mailto:contact@rejoice.ngo">contact@rejoice.ngo</a>) the project you care most about — B.I.A. orphanage Nepal, K.C.E. school India, emergency aid…</p>
+          <p>We channel those donations to the designated project and keep you informed in our next reports.</p>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ──────────── PHASE 6 — RÉASSURANCE FINALE ──────────── -->
+
+<div class="qsn reveal" id="qui-sommes-nous">
+  <div class="qsn-inner">
+    <div class="qsn-head">
+      <p class="s-label">The non-profit</p>
+      <h2 class="s-title">Who we are</h2>
+    </div>
+    <div class="qsn-grid">
+      <div style="text-align:center">
+        <div class="portrait-circle-big">
+          <img src="img/extracted/inline-f5f6403e.jpg" alt="Laurent Perraud">
+        </div>
+        <div class="founder-name-big">Laurent Perraud</div>
+        <div class="founder-title-big">Président de Rejoice</div>
+        <div class="founder-tag">🏂 <strong>Ancien sportif de haut niveau</strong><br>Snowboard freestyle</div>
+        <div class="founder-tag">🏢 <strong>Dirigeant PME</strong><br>~40 personnes</div>
+        <div class="founder-tag">🌍 <strong>Fondateur Rejoice</strong><br>depuis 2024</div>
+        <div style="margin-top:1.8rem">
+          <div class="cloud-wrap" id="cloudWrap">
+            <svg style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:2" viewBox="0 0 380 240">
+              <defs><clipPath id="cloudClip"><path d="M60,200 Q10,200 10,155 Q10,125 35,115 Q30,100 30,85 Q30,50 65,40 Q70,15 105,15 Q125,5 150,10 Q165,2 185,5 Q215,0 240,15 Q265,10 285,30 Q320,25 340,55 Q370,60 370,95 Q375,110 365,130 Q375,140 375,160 Q375,195 340,200 Z"/></clipPath></defs>
+              <path d="M60,200 Q10,200 10,155 Q10,125 35,115 Q30,100 30,85 Q30,50 65,40 Q70,15 105,15 Q125,5 150,10 Q165,2 185,5 Q215,0 240,15 Q265,10 285,30 Q320,25 340,55 Q370,60 370,95 Q375,110 365,130 Q375,140 375,160 Q375,195 340,200 Z" fill="rgba(255,255,255,0.12)" stroke="rgba(245,200,66,0.6)" stroke-width="2.5"/>
+            </svg>
+            <div style="position:absolute;inset:0;clip-path:url(#cloudClip)">
+              <video id="profileVideo" src="REJOICE_ITW_FONDATEUR_FR.mp4" preload="none" playsinline style="width:100%;height:100%;object-fit:cover;display:block"></video>
+              <div id="videoFallback" style="position:absolute;inset:0;background:linear-gradient(135deg,#2C1810,#5C3D2E);display:flex;align-items:center;justify-content:center">
+                <span style="font-family:Caveat,cursive;color:#F5C842;font-size:.95rem;text-align:center;padding:1rem">Vidéo<br>bientôt<br>disponible</span>
+              </div>
+            </div>
+            <div id="videoPlayBtn" class="cloud-play">
+              <svg width="16" height="18" viewBox="0 0 20 22" fill="none"><path d="M3 2L17 11L3 20V2Z" fill="#2C1810"/></svg>
+            </div>
+          </div>
+          <div class="cloud-label">✦ Vidéo de présentation</div>
+        </div>
+      </div>
+      <div>
+        <p class="bio-para">Former pro freestyle snowboarder, then CEO of a 40-person family-owned SME — it was after years of searching for meaning in my various ventures that, in 2019, a rupture happened in my life. The time <em>"for others"</em> had come, and I refocused my new projects on discovery, hospitality, sharing, and humanitarian aid.</p>
+        <p class="bio-para">I have travelled several times in recent years to demanding regions — India, Nepal, and others. I needed to be there in person, alongside the NGOs, to understand their needs and witness the remarkable work being done.</p>
+        <p class="bio-para">That's why I decided to create <strong>REJOICE in 2024</strong>, to financially support NGOs abroad. What drove my choice was the <strong>extreme urgency</strong> some of these organizations face to fight a level of hardship that's hard to imagine.</p>
+        <div class="cit-bio">
+          <p>"This is my commitment: to be on the ground, the steward and guarantor of the actions stemming from your generosity."</p>
+          <div class="cit-author">— Laurent Perraud, President of Rejoice</div>
+        </div>
+        <p class="bio-para"><strong>Help us</strong> by funding the non-profit one-time or regularly. I personally commit that every euro is forwarded and used to support all these beautiful human projects.</p>
+        <div class="fiscal-box">
+          <span style="font-size:1.8rem">💛</span>
+          <div>
+            <div style="font-size:.9rem;font-weight:600;color:var(--text);margin-bottom:.2rem">Tax benefit (FR taxpayers)</div>
+            <div style="font-size:.85rem;color:var(--muted)"><strong>66%</strong> reduction (or <strong>75%</strong> under IFI). See FAQ.</div>
+          </div>
+        </div>
+        <a href="https://www.helloasso.com/associations/rejoice-63/accueil" target="_blank" rel="noopener" class="btn btn-p">💛 Donate via HelloAsso</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="stay-section reveal" id="contact">
+  <div class="stay-inner">
+    <div class="stay-head">
+      <p class="s-label">Let's keep the journey going</p>
+      <h2 class="s-title">Stay in touch</h2>
+      <p class="s-body" style="margin:0 auto">Follow our news from the field, or write to us directly — either way, we'll keep the link.</p>
+    </div>
+    <div class="stay-grid">
+      <!-- Newsletter card -->
+      <div class="stay-card stay-card-news" id="newsletter">
+        <div class="stay-card-icon">✉</div>
+        <h3>Get our news from the field</h3>
+        <p>Not ready to donate today? Follow our missions and projects — one email every 2 to 3 months, never more.</p>
+        <form class="newsletter-form" onsubmit="return submitNewsletterForm(event)">
+          <input type="email" id="nl-email" name="email" required placeholder="your@email.com" aria-label="Email address">
+          <button type="submit">Sign me up ✦</button>
+        </form>
+        <p class="stay-card-note">One-click unsubscribe. <a href="privacy-policy.html">Privacy policy</a></p>
+      </div>
+      <!-- Contact card -->
+      <div class="stay-card stay-card-contact">
+        <div class="stay-card-icon">💬</div>
+        <h3>Want to join the adventure?</h3>
+        <p>Retreat, support, information — we'd be delighted to talk with you.</p>
+        <div class="stay-card-actions">
+          <a href="mailto:contact@rejoice.ngo" class="btn btn-p" style="font-size:1rem;padding:.85rem 1.8rem">✉ Write to Rejoice</a>
+          <a href="https://rejoice.ngo" target="_blank" rel="noopener" class="btn btn-o">rejoice.ngo ↗</a>
+        </div>
+        <p class="stay-card-note">Reply within 48 h on weekdays.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="partners-section reveal" id="partenaires">
+  <div class="partners-inner">
+    <div class="partners-head">
+      <p class="s-label">They trust us</p>
+      <h2 class="s-title">Our partners</h2>
+      <p style="font-family:Lora,serif;font-style:italic;font-size:1rem;color:var(--muted);max-width:600px;margin:0 auto">Organizations and places that share our values and walk alongside the Rejoice mission.</p>
+    </div>
+    <div class="partners-grid">
+      <a href="https://euthymia.fr" target="_blank" rel="noopener" class="partner-card">
+        <div class="partner-logo">
+          <svg viewBox="0 0 220 56" xmlns="http://www.w3.org/2000/svg">
+            <text x="110" y="38" text-anchor="middle" font-family="Georgia, serif" font-size="28" font-weight="300" fill="#5C3D2E" letter-spacing="2.5">euthymia</text>
+            <line x1="60" y1="48" x2="160" y2="48" stroke="#7BA88A" stroke-width="1"/>
+          </svg>
+        </div>
+        <div class="partner-name">Euthymia</div>
+        <div class="partner-type">Meditation · MBSR</div>
+        <p class="partner-desc">Mindfulness training center and silent retreats.</p>
+        <span class="partner-url">euthymia.fr →</span>
+      </a>
+      <a href="https://konxus-media.com" target="_blank" rel="noopener" class="partner-card">
+        <div class="partner-logo">
+          <svg viewBox="0 0 220 56" xmlns="http://www.w3.org/2000/svg">
+            <text x="110" y="38" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="28" font-weight="700" fill="#2C1810" letter-spacing="-1">k<tspan fill="#F5C842">o</tspan>nxus</text>
+            <text x="110" y="50" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="7" font-weight="600" fill="#5C3D2E" letter-spacing="3.5">M E D I A</text>
+          </svg>
+        </div>
+        <div class="partner-name">Konxus Media</div>
+        <div class="partner-type">Media · Communications</div>
+        <p class="partner-desc">Magazine &amp; podcasts for a more conscious work and personal life.</p>
+        <span class="partner-url">konxus-media.com →</span>
+      </a>
+      <a href="https://lessoleils.com" target="_blank" rel="noopener" class="partner-card">
+        <div class="partner-logo">
+          <svg viewBox="0 0 220 56" xmlns="http://www.w3.org/2000/svg">
+            <g transform="translate(38,28)">
+              <circle r="9" fill="#F5C842"/>
+              <g stroke="#E8A020" stroke-width="1.8" stroke-linecap="round">
+                <line x1="0" y1="-15" x2="0" y2="-12"/>
+                <line x1="0" y1="12" x2="0" y2="15"/>
+                <line x1="-15" y1="0" x2="-12" y2="0"/>
+                <line x1="12" y1="0" x2="15" y2="0"/>
+                <line x1="-10.6" y1="-10.6" x2="-8.5" y2="-8.5"/>
+                <line x1="8.5" y1="8.5" x2="10.6" y2="10.6"/>
+                <line x1="-10.6" y1="10.6" x2="-8.5" y2="8.5"/>
+                <line x1="8.5" y1="-8.5" x2="10.6" y2="-10.6"/>
+              </g>
+            </g>
+            <text x="125" y="36" text-anchor="middle" font-family="Georgia, serif" font-size="22" font-weight="400" font-style="italic" fill="#5C3D2E">Les Soleils</text>
+          </svg>
+        </div>
+        <div class="partner-name">Les Soleils</div>
+        <div class="partner-type">B&amp;B · Campground</div>
+        <p class="partner-desc">A restorative place in Creuse — B&amp;B and campground.</p>
+        <span class="partner-url">lessoleils.com →</span>
+      </a>
+      <a href="https://dhagpo-kundreul-ling.org" target="_blank" rel="noopener" class="partner-card">
+        <div class="partner-logo">
+          <svg viewBox="0 0 220 56" xmlns="http://www.w3.org/2000/svg">
+            <g transform="translate(36,28)">
+              <path d="M-14,8 L-7,-4 L0,4 L7,-8 L14,8 Z" fill="#C85C3A" stroke="#8B3A20" stroke-width="1" stroke-linejoin="round"/>
+              <circle cx="-3" cy="-12" r="3" fill="#F5C842"/>
+            </g>
+            <text x="125" y="32" text-anchor="middle" font-family="Georgia, serif" font-size="14" font-weight="600" fill="#5C3D2E" letter-spacing="1.5">DHAGPO</text>
+            <text x="125" y="46" text-anchor="middle" font-family="Georgia, serif" font-size="9" font-weight="400" font-style="italic" fill="#7A5C4E" letter-spacing="0.8">Kundreul Ling</text>
+          </svg>
+        </div>
+        <div class="partner-name">Dhagpo K. Ling</div>
+        <div class="partner-type">Buddhist center</div>
+        <p class="partner-desc">In the heart of the Auvergne volcanoes, 6 km from La Poumerole.</p>
+        <span class="partner-url">dhagpo-kundreul-ling.org →</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h2>Rejoice</h2>
+      <p>Take care of yourself, take care of them. French non-profit (loi 1901).</p>
+      <br><div style="font-size:.8rem;color:rgba(255,255,255,.3)">rejoice.ngo</div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="#principe">How it works</a></li>
+        <li><a href="#sejours">Retreats</a></li>
+        <li><a href="#impact">Impact</a></li>
+        <li><a href="#qui-sommes-nous">About us</a></li>
+        <li><a href="#partenaires">Partners</a></li>
+        <li><a href="#soutenir">Donate</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:contact@rejoice.ngo">contact@rejoice.ngo</a></li>
+        <li><a href="https://lapoumerole.org" target="_blank" rel="noopener">La Poumerole</a></li>
+        <li><a href="https://rejoice.ngo" target="_blank" rel="noopener">rejoice.ngo</a></li>
+        <li><a href="https://www.helloasso.com/associations/rejoice-63/accueil" target="_blank" rel="noopener">Donate</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bot">
+    <span>© 2025 Rejoice — French non-profit (loi 1901)</span>
+    <span style="display:flex;gap:1.2rem;flex-wrap:wrap"><a href="legal-notice.html" style="color:rgba(255,255,255,.55);text-decoration:none">Legal notice</a><a href="privacy-policy.html" style="color:rgba(255,255,255,.55);text-decoration:none">Privacy policy</a></span>
+    <span>Made with ♥ &amp; sunshine</span>
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <a href="#sejours" class="scta-1">✦ See retreats</a>
+  <a href="https://www.helloasso.com/associations/rejoice-63/accueil" target="_blank" rel="noopener" class="scta-2">💛 Donate</a>
+</div>
+
+<div class="lightbox" id="lightbox" onclick="closeLB()">
+  <button class="lb-close" onclick="event.stopPropagation();closeLB()" aria-label="Close">×</button>
+  <button class="lb-prev" onclick="event.stopPropagation();lbPrev()" aria-label="Previous photo">‹</button>
+  <button class="lb-next" onclick="event.stopPropagation();lbNext()" aria-label="Next photo">›</button>
+  <img id="lbImg" src="" alt="" onclick="event.stopPropagation()">
+  <div class="lb-counter" id="lbCounter"></div>
+</div>
+
+<script>
+const IMGS = {
+  BEDROOM: "img/extracted/bedroom-8c969949.jpg",
+  BKFAST: "img/extracted/bkfast-8c969949.jpg",
+  BUFFET: "img/extracted/buffet-8c969949.jpg",
+  COLL_2: "img/extracted/coll_2-8c969949.jpg",
+  COLL_3: "img/extracted/coll_3-8c969949.jpg",
+  COLL_4: "img/extracted/coll_4-8c969949.jpg",
+  FOREST: "img/extracted/forest-8c969949.jpg",
+  GROUP: "img/extracted/group-8c969949.jpg",
+  HIKE: "img/extracted/hike-8c969949.jpg",
+  HOUSE: "img/extracted/house-8c969949.jpg",
+  IKER: "img/extracted/iker-8c969949.jpg",
+  KCE_1: "img/extracted/kce_1-8c969949.jpg",
+  KCE_2: "img/extracted/kce_2-8c969949.jpg",
+  KCE_3: "img/extracted/kce_3-8c969949.jpg",
+  KCE_4: "img/extracted/kce_4-8c969949.jpg",
+  KCE_5: "img/extracted/kce_5-8c969949.jpg",
+  KCE_6: "img/extracted/kce_6-c6c62fb9.jpg",
+  KCE_KIDS: "img/extracted/kce_kids-c6c62fb9.jpg",
+  KCE_PRIERE: "img/extracted/kce_priere-c6c62fb9.jpg",
+  LIVING: "img/extracted/living-8c969949.jpg",
+  LUNCH: "img/extracted/lunch-8c969949.jpg",
+  MEDITA: "img/extracted/medita-8c969949.jpg",
+  NEPAL_GROUP: "img/extracted/nepal_group-8c969949.jpg",
+  PANORAMA: "img/extracted/panorama-8c969949.jpg",
+  SCREEN: "img/extracted/screen-c6c62fb9.jpg",
+  SELFIE: "img/extracted/selfie-8c969949.jpg",
+  TIFF2: "img/extracted/tiff2-8c969949.jpg",
+  TIFF3: "img/extracted/tiff3-8c969949.jpg",
+  TIFF4: "img/extracted/tiff4-8c969949.jpg",
+  TIFF5: "img/extracted/tiff5-8c969949.jpg",
+  WINDOW: "img/extracted/window-8c969949.jpg",
+  SUNSET_POUM: "img/extracted/sunset_poum-c6c62fb9.jpg",
+  PILIER_ECOLE: "img/extracted/pilier_ecole-c6c62fb9.jpg",
+  PILIER_HANDICAP: "img/extracted/pilier_handicap-c6c62fb9.jpg",
+  PILIER_URGENCE: "img/extracted/pilier_urgence-c6c62fb9.jpg",
+  PILIER_ORPHELINAT: "img/extracted/pilier_orphelinat-c6c62fb9.jpg",
+  IKER_02: "img/extracted/iker_02-c6c62fb9.jpg",
+  BURGER_POUM: "img/extracted/burger_poum-8c969949.jpg",
+  DEJ_POUM: "img/extracted/dej_poum-8c969949.jpg",
+  INT_CO: "img/extracted/int_co-8c969949.jpg"
+};
+
+const galleryPhotos = [
+  {src:'GROUP',       cap:'Un groupe engagé au service des autres'},
+  {src:'HIKE',        cap:'Balade au coucher du soleil'},
+  {src:'MEDITA',      cap:'Moment de ressourcement'},
+  {src:'SELFIE',      cap:'Des liens qui se créent'},
+  {src:'PANORAMA',    cap:'Vue depuis La Poumerole'},
+  {src:'FOREST',      cap:'En pleine nature'},
+  {src:'WINDOW',      cap:'Contempler, souffler'},
+  {src:'BUFFET',      cap:'Le petit-déjeuner ensemble'},
+  {src:'SCREEN',      cap:'Échanges au coin du feu'},
+  {src:'INT_CO',      cap:'Cercle de parole'},
+  {src:'BURGER_POUM', cap:'Déjeuner face à la vallée'},
+  {src:'DEJ_POUM',    cap:'Petit matin partagé'},
+];
+const gallery = document.getElementById('gallery');
+galleryPhotos.forEach(p => {
+  const div = document.createElement('div');
+  div.className = 'polaroid js-lb';
+  const img = document.createElement('img'); img.src=IMGS[p.src]; img.alt=p.cap; img.loading='lazy';
+  const cap = document.createElement('div'); cap.className='polaroid-cap'; cap.textContent=p.cap;
+  div.appendChild(img); div.appendChild(cap);
+  div.onclick = () => openLB(div);
+  gallery.appendChild(div);
+});
+
+const strip = document.getElementById('poumStrip');
+['HOUSE','LIVING','BEDROOM'].forEach(k => {
+  const img = document.createElement('img'); img.src=IMGS[k]; img.alt='La Poumerole'; img.loading='lazy';
+  strip.appendChild(img);
+});
+
+const projects = [
+  {country:'nepal',flag:'🇳🇵',label:'Nepal',labelColor:'#C85C3A',labelText:'white',img:'PILIER_ORPHELINAT',title:'B.I.A. Orphanage — Kathmandu',desc:"Long-term support for the B.I.A. orphanage: food, schooling, medical care and educational activities.",date:'2020–present'},
+  {country:'nepal',flag:'🇳🇵',label:'Nepal',labelColor:'#C85C3A',labelText:'white',img:'PILIER_HANDICAP',title:'B.I.A. Disability Center — Nepal',desc:"Support for a center welcoming people with disabilities: housing, training, care…",date:'2021–present'},
+  {country:'inde',flag:'🇮🇳',label:'India',labelColor:'#F5C842',labelText:'#2C1810',img:'KCE_4',title:'K.C.E. School — India',desc:"Construction, furniture, maintenance, accredited teachers…",date:'2022–present'},
+];
+function renderProjects(filter) {
+  const grid = document.getElementById('projGrid'); grid.innerHTML = '';
+  (filter==='all' ? projects : projects.filter(p=>p.country===filter)).forEach((p,i) => {
+    const card = document.createElement('div'); card.className = 'proj-card';
+    card.style.transitionDelay = (i*80)+'ms';
+    card.innerHTML = '<img src="'+IMGS[p.img]+'" alt="'+p.title+'" loading="lazy" class="js-lb"><div class="proj-card-body"><span class="proj-tag" style="background:'+p.labelColor+';color:'+p.labelText+'">'+p.flag+' '+p.label+'</span><h4>'+p.title+'</h4><p>'+p.desc+'</p><div class="proj-date">'+p.date+'</div></div>';
+    const im = card.querySelector('img');
+    im.onclick = () => openLB(im);
+    grid.appendChild(card);
+  });
+}
+renderProjects('all');
+document.querySelectorAll('.proj-filter').forEach(btn => {
+  btn.onclick = function(){ document.querySelectorAll('.proj-filter').forEach(b=>b.classList.remove('active')); this.classList.add('active'); renderProjects(this.dataset.filter); };
+});
+
+(function(){
+  var m={'th_hero':'KCE_PRIERE','th_1':'KCE_1','th_2':'KCE_2','th_3':'KCE_3','th_kids':'KCE_KIDS','th_4':'KCE_4','th_5':'KCE_5','th_c2':'COLL_2','th_tiff3':'TIFF3','th_c4':'COLL_4'};
+  function load(){Object.entries(m).forEach(function(e){var el=document.getElementById(e[0]);if(el&&IMGS[e[1]])el.src=IMGS[e[1]];});}
+  var obs=new IntersectionObserver(function(en){if(en[0].isIntersecting){load();obs.disconnect();}},{threshold:0.05});
+  var s=document.getElementById('impact'); if(s) obs.observe(s);
+})();
+
+let _lbState = {list: [], idx: 0};
+function _lbCollect(){
+  return Array.from(document.querySelectorAll('.js-lb')).map(el => {
+    const img = el.tagName === 'IMG' ? el : el.querySelector('img');
+    return {el, src: img && img.src ? img.src : ''};
+  }).filter(x => x.src);
+}
+function _lbShow(){
+  const cur = _lbState.list[_lbState.idx];
+  if (!cur) return;
+  document.getElementById('lbImg').src = cur.src;
+  const c = document.getElementById('lbCounter');
+  if (c) c.textContent = (_lbState.idx + 1) + ' / ' + _lbState.list.length;
+}
+function openLB(target){
+  const list = _lbCollect();
+  let idx = -1;
+  if (typeof target === 'string') {
+    const abs = new URL(target, location.href).href;
+    idx = list.findIndex(x => x.src === abs);
+  } else if (target && target.nodeType) {
+    idx = list.findIndex(x => x.el === target);
+    if (idx === -1) {
+      const inner = target.tagName === 'IMG' ? target : target.querySelector && target.querySelector('img');
+      if (inner) idx = list.findIndex(x => x.src === inner.src);
+    }
+  }
+  if (idx === -1) idx = 0;
+  _lbState = {list, idx};
+  _lbShow();
+  document.getElementById('lightbox').classList.add('open');
+}
+function lbPrev(){ if(!_lbState.list.length) return; _lbState.idx = (_lbState.idx - 1 + _lbState.list.length) % _lbState.list.length; _lbShow(); }
+function lbNext(){ if(!_lbState.list.length) return; _lbState.idx = (_lbState.idx + 1) % _lbState.list.length; _lbShow(); }
+function closeLB(){document.getElementById('lightbox').classList.remove('open');}
+
+document.addEventListener('keydown', function(e){
+  if (!document.getElementById('lightbox').classList.contains('open')) return;
+  if (e.key === 'ArrowLeft') { e.preventDefault(); lbPrev(); }
+  else if (e.key === 'ArrowRight') { e.preventDefault(); lbNext(); }
+  else if (e.key === 'Escape') closeLB();
+});
+
+(function(){
+  var lb = document.getElementById('lightbox'); if (!lb) return;
+  var sx=0, sy=0, tracking=false;
+  lb.addEventListener('touchstart', function(e){
+    if (e.touches.length !== 1) { tracking=false; return; }
+    sx = e.touches[0].clientX; sy = e.touches[0].clientY; tracking=true;
+  }, {passive:true});
+  lb.addEventListener('touchend', function(e){
+    if (!tracking) return; tracking=false;
+    var t = e.changedTouches[0];
+    var dx = t.clientX - sx, dy = t.clientY - sy;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.2) {
+      if (dx < 0) lbNext(); else lbPrev();
+    }
+  }, {passive:true});
+})();
+
+(function(){
+  var vid=document.getElementById('profileVideo'),fb=document.getElementById('videoFallback'),btn=document.getElementById('videoPlayBtn');
+  if(!vid||!btn)return;
+  var playing=false;
+  vid.addEventListener('loadeddata',function(){if(fb)fb.style.display='none';});
+  btn.onclick=function(){
+    if(!playing){vid.play().then(function(){playing=true;if(fb)fb.style.display='none';btn.style.opacity='0';}).catch(function(){});}
+    else{vid.pause();playing=false;btn.style.opacity='1';}
+  };
+  vid.onclick=function(){if(playing){vid.pause();playing=false;btn.style.opacity='1';}};
+})();
+
+(function(){
+  var vid=document.getElementById('founderCloudVideo'),fb=document.getElementById('founderCloudFallback'),btn=document.getElementById('founderCloudPlay');
+  if(!vid||!btn)return;
+  var playing=false;
+  vid.addEventListener('loadeddata',function(){if(fb)fb.style.display='none';});
+  btn.onclick=function(){
+    if(!playing){vid.play().then(function(){playing=true;if(fb)fb.style.display='none';btn.style.opacity='0';}).catch(function(){});}
+    else{vid.pause();playing=false;btn.style.opacity='1';}
+  };
+  vid.onclick=function(){if(playing){vid.pause();playing=false;btn.style.opacity='1';}};
+})();
+
+// Hydrate feat-photo and m-card-photo from data-imgkey
+document.querySelectorAll('img[data-imgkey]').forEach(function(img){
+  var k=img.getAttribute('data-imgkey');
+  if(IMGS[k])img.src=IMGS[k];
+});
+
+// FAQ accordeon
+document.querySelectorAll('.faq-item').forEach(function(item){
+  var btn = item.querySelector('.faq-q');
+  if(!btn) return;
+  btn.addEventListener('click', function(){
+    var isOpen = item.classList.contains('open');
+    // optional: close others on open
+    if(!isOpen){
+      document.querySelectorAll('.faq-item.open').forEach(function(o){o.classList.remove('open');var b=o.querySelector('.faq-q');if(b)b.setAttribute('aria-expanded','false');});
+    }
+    item.classList.toggle('open');
+    btn.setAttribute('aria-expanded', item.classList.contains('open') ? 'true' : 'false');
+  });
+});
+
+// Formulaire séjour - construit un mailto enrichi
+function submitSejourForm(ev){
+  ev.preventDefault();
+  var name = document.getElementById('sf-name').value.trim();
+  var email = document.getElementById('sf-email').value.trim();
+  var phone = document.getElementById('sf-phone').value.trim();
+  var sejourSel = document.getElementById('sf-sejour');
+  var sejourLabel = sejourSel.options[sejourSel.selectedIndex].text;
+  var message = document.getElementById('sf-message').value.trim();
+  var subject = 'Demande séjour Rejoice — ' + sejourLabel;
+  var body = 'Bonjour,\n\nJe souhaite avoir des informations sur le séjour suivant :\n→ ' + sejourLabel + '\n\n';
+  body += '── Mes coordonnées ──\n';
+  body += 'Nom : ' + name + '\n';
+  body += 'Email : ' + email + '\n';
+  if(phone) body += 'Téléphone : ' + phone + '\n';
+  body += '\n── Mon message ──\n' + message + '\n\n';
+  body += 'Bien à vous,\n' + name;
+  window.location.href = 'mailto:contact@rejoice.ngo?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  return false;
+}
+
+// Newsletter - placeholder mailto en attendant l'intégration Brevo
+function submitNewsletterForm(ev){
+  ev.preventDefault();
+  var email = document.getElementById('nl-email').value.trim();
+  if(!email) return false;
+  var subject = 'Inscription newsletter Rejoice';
+  var body = 'Bonjour,\n\nJe souhaite m\'inscrire à la newsletter de Rejoice pour suivre les nouvelles du terrain.\n\nMon email : ' + email + '\n\nMerci !';
+  window.location.href = 'mailto:contact@rejoice.ngo?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  return false;
+}
+
+var lastScrollY = 0;
+var nav = document.getElementById('mainNav');
+window.addEventListener('scroll',function(){
+  var y = window.scrollY;
+  nav.classList.toggle('scrolled', y > 30);
+  // Masquer la nav quand on scroll vers le bas sur mobile
+  if (window.innerWidth <= 768 && y > 200) {
+    if (y > lastScrollY + 5) {
+      nav.classList.add('hidden-mobile');
+    } else if (y < lastScrollY - 5) {
+      nav.classList.remove('hidden-mobile');
+    }
+  } else {
+    nav.classList.remove('hidden-mobile');
+  }
+  lastScrollY = y;
+},{ passive:true });
+
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
+},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+['.m-card','.testi-card','.f-card','.pays-card','.partner-card'].forEach(sel=>{
+  document.querySelectorAll(sel).forEach((el,i)=>{el.style.transitionDelay=(i*70)+'ms';el.classList.add('reveal');obs.observe(el);});
+});
+</script>
+
+<!-- ── HELLOASSO IFRAME MODAL ── -->
+<div class="ha-modal" id="haModal" role="dialog" aria-modal="true" aria-labelledby="haModalTitle" aria-hidden="true">
+  <div class="ha-modal-card">
+    <div class="ha-modal-head">
+      <div class="ha-title" id="haModalTitle"><span class="dot"></span>Donate to Rejoice</div>
+      <button type="button" class="ha-modal-close" aria-label="Close" onclick="closeHaModal()">✕</button>
+    </div>
+    <div class="ha-modal-body">
+      <div class="ha-loading" id="haLoading"><div class="spin"></div><div>Loading secure form…</div></div>
+      <iframe id="haIframe" title="HelloAsso donation form" loading="lazy" allow="payment" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="ha-modal-foot">
+      🔒 Secure payment via HelloAsso · <a href="https://www.helloasso.com/associations/rejoice-63/accueil" target="_blank" rel="noopener">Open in new tab ↗</a>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ── HELLOASSO IFRAME — config ──
+   For iframe embedding, HelloAsso uses a donation FORM URL with /widget appended.
+   Format: https://www.helloasso.com/associations/rejoice-63/formulaires/[SLUG]/widget
+   Replace the value below with the widget URL of your active donation form. */
+const HA_WIDGET_URL = "https://www.helloasso.com/associations/rejoice-63/formulaires/1/widget";
+
+function openHaModal(){
+  const m = document.getElementById('haModal');
+  const f = document.getElementById('haIframe');
+  const l = document.getElementById('haLoading');
+  if(!f.src) f.src = HA_WIDGET_URL;
+  l.style.display = 'flex';
+  f.onload = () => { l.style.display = 'none'; };
+  m.classList.add('open');
+  m.setAttribute('aria-hidden','false');
+  document.body.style.overflow = 'hidden';
+}
+function closeHaModal(){
+  const m = document.getElementById('haModal');
+  m.classList.remove('open');
+  m.setAttribute('aria-hidden','true');
+  document.body.style.overflow = '';
+}
+document.addEventListener('click', function(e){
+  const a = e.target.closest('a[href*="helloasso.com/associations/rejoice"]');
+  if(!a) return;
+  if(a.closest('.ha-modal-foot')) return;
+  e.preventDefault();
+  openHaModal();
+});
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closeHaModal(); });
+document.getElementById('haModal').addEventListener('click', function(e){
+  if(e.target === this) closeHaModal();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact & Newsletter — Rejoice</title>
+<meta name="description" content="Une question ? Envie de nous suivre ? Inscrivez-vous à la newsletter Rejoice ou écrivez-nous directement.">
+<link rel="alternate" hreflang="fr" href="contact.html">
+<link rel="alternate" hreflang="en" href="en/contact.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<nav id="mainNav">
+  <a href="index.html" class="nav-logo">
+    <img src="img/extracted/inline-5f4e9e2f.png" alt="Rejoice" style="height:50px;width:auto;display:block">
+  </a>
+  <ul class="nav-links">
+    <li><a href="sejours.html">Nos séjours</a></li>
+    <li><a href="projets.html">Nos actions</a></li>
+    <li><a href="qui-sommes-nous.html">Qui sommes-nous</a></li>
+    <li><a href="transparence.html">Transparence</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+    <li><a href="don.html" class="nav-cta">Faire un don</a></li>
+    <li><span class="lang-switch"><a href="index.html" class="active" aria-label="Français">🇫🇷</a><span class="sep">/</span><a href="en/index.html" aria-label="English">🇬🇧</a></span></li>
+  </ul>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <p class="s-label">Restons en contact</p>
+    <h1 class="page-title">Une question, une idée, l'envie de suivre l'aventure&nbsp;?</h1>
+    <p class="page-lede">Écrivez-nous, ou inscrivez-vous à la newsletter — un email tous les 2 à 3 mois, jamais plus.</p>
+  </div>
+</div>
+
+<div class="stay-section reveal" id="contact">
+  <div class="stay-inner">
+    <div class="stay-head">
+      <p class="s-label">Continuons l'aventure ensemble</p>
+      <h2 class="s-title">Restons en contact</h2>
+      <p class="s-body" style="margin:0 auto">Suivez nos nouvelles du terrain ou écrivez-nous directement — dans les deux cas, on garde le lien.</p>
+    </div>
+    <div class="stay-grid">
+      <!-- Newsletter card -->
+      <div class="stay-card stay-card-news" id="newsletter">
+        <div class="stay-card-icon">✉</div>
+        <h3>Recevez nos nouvelles du terrain</h3>
+        <p>Pas prêt(e) à donner aujourd'hui ? Suivez nos missions et nos projets — un email tous les 2 à 3 mois, jamais plus.</p>
+        <!--
+          ╭─────────────────────────────────────────────────────────────╮
+          │  NEWSLETTER — INTÉGRATION BREVO (anciennement Sendinblue)   │
+          │  À l'activation du compte Brevo, remplacer le formulaire     │
+          │  ci-dessous par le code embed fourni par Brevo :             │
+          │  https://app.brevo.com  →  Contacts  →  Formulaires         │
+          ╰─────────────────────────────────────────────────────────────╯
+        -->
+        <form class="newsletter-form" onsubmit="return submitNewsletterForm(event)">
+          <input type="email" id="nl-email" name="email" required placeholder="votre@email.fr" aria-label="Adresse email">
+          <button type="submit">M'inscrire ✦</button>
+        </form>
+        <p class="stay-card-note">Désinscription en 1 clic. <a href="confidentialite.html">Politique de confidentialité</a></p>
+      </div>
+      <!-- Contact card -->
+      <div class="stay-card stay-card-contact">
+        <div class="stay-card-icon">💬</div>
+        <h3>Envie de rejoindre l'aventure ?</h3>
+        <p>Séjour, soutien, information — nous serons ravis d'échanger avec vous.</p>
+        <div class="stay-card-actions">
+          <a href="mailto:contact@rejoice.ngo" class="btn btn-p" style="font-size:1rem;padding:.85rem 1.8rem">✉ Écrire à Rejoice</a>
+          <a href="https://rejoice.ngo" target="_blank" rel="noopener" class="btn btn-o">rejoice.ngo ↗</a>
+        </div>
+        <p class="stay-card-note">Réponse sous 48 h en semaine.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h2>Rejoice</h2>
+      <p>Prendre soin de soi, c'est prendre soin d'eux. Association loi 1901.</p>
+      <br><div style="font-size:.8rem;color:rgba(255,255,255,.3)">rejoice.ngo</div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="sejours.html">Nos séjours</a></li>
+        <li><a href="projets.html">Nos actions</a></li>
+        <li><a href="qui-sommes-nous.html">Qui sommes-nous</a></li>
+        <li><a href="transparence.html">Transparence</a></li>
+        <li><a href="don.html">Faire un don</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:contact@rejoice.ngo">contact@rejoice.ngo</a></li>
+        <li><a href="https://lapoumerole.org" target="_blank" rel="noopener">La Poumerole</a></li>
+        <li><a href="https://rejoice.ngo" target="_blank" rel="noopener">rejoice.ngo</a></li>
+        <li><a href="https://www.helloasso.com/associations/rejoice-63/accueil" target="_blank" rel="noopener">Faire un don</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bot">
+    <span>© 2025 Rejoice — Association loi 1901</span>
+    <span style="display:flex;gap:1.2rem;flex-wrap:wrap"><a href="mentions-legales.html" style="color:rgba(255,255,255,.55);text-decoration:none">Mentions légales</a><a href="confidentialite.html" style="color:rgba(255,255,255,.55);text-decoration:none">Politique de confidentialité</a></span>
+    <span>Fait avec ♥ &amp; du soleil</span>
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <a href="sejours.html" class="scta-1">✦ Voir les séjours</a>
+  <a href="https://www.helloasso.com/associations/rejoice-63/accueil" target="_blank" rel="noopener" class="scta-2">💛 Faire un don</a>
+</div>
+
+<div class="lightbox" id="lightbox" onclick="closeLB()">
+  <button class="lb-close" onclick="event.stopPropagation();closeLB()" aria-label="Fermer">×</button>
+  <button class="lb-prev" onclick="event.stopPropagation();lbPrev()" aria-label="Photo précédente">‹</button>
+  <button class="lb-next" onclick="event.stopPropagation();lbNext()" aria-label="Photo suivante">›</button>
+  <img id="lbImg" src="" alt="" onclick="event.stopPropagation()">
+  <div class="lb-counter" id="lbCounter"></div>
+</div>
+
+
+<!-- ── HELLOASSO IFRAME MODAL ── -->
+<div class="ha-modal" id="haModal" role="dialog" aria-modal="true" aria-labelledby="haModalTitle" aria-hidden="true">
+  <div class="ha-modal-card">
+    <div class="ha-modal-head">
+      <div class="ha-title" id="haModalTitle"><span class="dot"></span>Faire un don à Rejoice</div>
+      <button type="button" class="ha-modal-close" aria-label="Fermer" onclick="closeHaModal()">✕</button>
+    </div>
+    <div class="ha-modal-body">
+      <div class="ha-loading" id="haLoading"><div class="spin"></div><div>Chargement du formulaire sécurisé…</div></div>
+      <iframe id="haIframe" title="Formulaire de don HelloAsso" loading="lazy" allow="payment" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="ha-modal-foot">
+      🔒 Paiement sécurisé via HelloAsso · <a href="https://www.helloasso.com/associations/rejoice-63/accueil" target="_blank" rel="noopener">Ouvrir dans un nouvel onglet ↗</a>
+    </div>
+  </div>
+</div>
+
+<script src="assets/app.js" defer></script>
+</body>
+</html>

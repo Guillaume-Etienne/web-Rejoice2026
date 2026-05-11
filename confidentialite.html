@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,follow">
+<title>Politique de confidentialité — Rejoice</title>
+<meta name="description" content="Politique de confidentialité et traitement des données personnelles — Association Rejoice.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --yellow:#F5C842;--yellow-light:#FFF3C4;--yellow-warm:#E8A020;
+  --terra:#C85C3A;--terra-dark:#B04A2A;--sky:#7DC4E0;--sage:#7BA88A;
+  --cream:#FDF8F0;--brown:#5C3D2E;--text:#2C1810;--muted:#7A5C4E;--light:#B08070;
+  --r:20px;--rsm:10px;--rpill:50px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
+
+/* Top bar */
+.topbar{background:var(--text);color:rgba(255,255,255,.92);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.topbar a.back{color:var(--yellow);text-decoration:none;font-size:.92rem;font-weight:500;display:inline-flex;align-items:center;gap:.4rem;transition:opacity .2s}
+.topbar a.back:hover{opacity:.8}
+.topbar .lang{font-size:.85rem;display:flex;gap:.5rem;align-items:center}
+.topbar .lang a{color:rgba(255,255,255,.6);text-decoration:none;padding:.2rem .55rem;border-radius:var(--rpill);transition:all .2s}
+.topbar .lang a.active{background:var(--yellow);color:var(--text);font-weight:600}
+.topbar .lang a:not(.active):hover{color:white}
+
+/* Hero */
+.hero{background:linear-gradient(135deg,#FFF8E8,#FDF8F0);padding:5rem 2rem 3.5rem;text-align:center;border-bottom:1px solid rgba(44,24,16,.06)}
+.hero-inner{max-width:780px;margin:0 auto}
+.eyebrow{display:inline-block;font-family:'Caveat',cursive;font-size:1.05rem;color:var(--terra);font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.6rem}
+h1{font-family:'Caveat',cursive;font-size:clamp(2.4rem,5.5vw,3.8rem);font-weight:700;color:var(--text);line-height:1.05;margin-bottom:1rem}
+.lead{font-family:'Lora',serif;font-style:italic;font-size:1.1rem;color:var(--muted);line-height:1.75;max-width:640px;margin:0 auto}
+.meta{margin-top:1.4rem;font-size:.82rem;color:var(--light);letter-spacing:.04em}
+
+/* TOC */
+.toc-wrap{max-width:780px;margin:-2rem auto 0;padding:0 2rem;position:relative;z-index:2}
+.toc{background:white;border-radius:var(--r);padding:1.4rem 1.8rem;box-shadow:0 8px 32px rgba(44,24,16,.08);border:1px solid rgba(44,24,16,.05)}
+.toc-title{font-family:'Caveat',cursive;font-size:1.4rem;color:var(--terra);font-weight:700;margin-bottom:.7rem}
+.toc ol{list-style:none;counter-reset:t;display:grid;grid-template-columns:1fr 1fr;gap:.4rem .8rem}
+@media(max-width:640px){.toc ol{grid-template-columns:1fr}}
+.toc li{counter-increment:t;font-size:.88rem}
+.toc li::before{content:counter(t,decimal-leading-zero);color:var(--yellow-warm);font-weight:600;margin-right:.5rem;font-variant-numeric:tabular-nums}
+.toc a{color:var(--brown);text-decoration:none;transition:color .15s}
+.toc a:hover{color:var(--terra)}
+
+/* Content */
+main{max-width:780px;margin:0 auto;padding:3rem 2rem 5rem}
+section.block{margin-bottom:3rem;scroll-margin-top:2rem}
+h2{font-family:'Caveat',cursive;font-size:clamp(1.7rem,3.5vw,2.4rem);font-weight:700;color:var(--text);line-height:1.15;margin-bottom:1rem;display:flex;align-items:baseline;gap:.7rem}
+h2 .num{font-size:.65em;color:var(--yellow-warm);font-variant-numeric:tabular-nums;flex-shrink:0;font-family:'Inter',sans-serif;font-weight:600;letter-spacing:.04em}
+h3{font-family:'Inter',sans-serif;font-size:1rem;font-weight:600;color:var(--terra);margin:1.6rem 0 .5rem;letter-spacing:.01em}
+p,ul,ol{font-size:1rem;color:var(--brown);margin-bottom:1rem;line-height:1.75}
+ul,ol{padding-left:1.4rem}
+li{margin-bottom:.4rem}
+strong{color:var(--text);font-weight:600}
+a{color:var(--terra);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;transition:color .15s}
+a:hover{color:var(--terra-dark)}
+
+/* Highlight callout — used for HelloAsso iframe disclosure */
+.callout{background:linear-gradient(135deg,var(--yellow-light),#FFF8E0);border-left:4px solid var(--yellow);border-radius:var(--rsm);padding:1.4rem 1.6rem;margin:1.5rem 0}
+.callout-title{display:flex;align-items:center;gap:.55rem;font-family:'Caveat',cursive;font-size:1.4rem;color:var(--terra);font-weight:700;margin-bottom:.5rem;line-height:1.1}
+.callout-title .badge{font-family:'Inter',sans-serif;font-size:.62rem;background:var(--terra);color:white;padding:.18rem .55rem;border-radius:var(--rpill);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.callout p:last-child{margin-bottom:0}
+
+/* Data table */
+.tbl{width:100%;border-collapse:collapse;background:white;border-radius:var(--rsm);overflow:hidden;box-shadow:0 2px 8px rgba(44,24,16,.05);margin:1rem 0;font-size:.92rem}
+.tbl th,.tbl td{padding:.85rem 1rem;text-align:left;border-bottom:1px solid rgba(44,24,16,.06);vertical-align:top}
+.tbl th{background:rgba(245,200,66,.18);font-weight:600;color:var(--text);font-size:.78rem;letter-spacing:.04em;text-transform:uppercase}
+.tbl tr:last-child td{border-bottom:0}
+@media(max-width:600px){.tbl,.tbl tbody,.tbl tr,.tbl td,.tbl th{display:block}.tbl thead{display:none}.tbl td{padding:.45rem 1rem;border:0}.tbl tr{padding:.7rem 0;border-bottom:1px solid rgba(44,24,16,.08)}.tbl td::before{content:attr(data-label);display:block;font-size:.7rem;letter-spacing:.05em;text-transform:uppercase;color:var(--terra);font-weight:600;margin-bottom:.15rem}}
+
+/* Contact card */
+.contact-card{background:var(--text);color:rgba(255,255,255,.9);border-radius:var(--r);padding:2rem 2.2rem;margin-top:2.5rem}
+.contact-card h2{color:var(--yellow);margin-bottom:.6rem}
+.contact-card p{color:rgba(255,255,255,.78)}
+.contact-card a{color:var(--yellow);text-decoration:none;font-weight:600}
+.contact-card a:hover{color:#FFF3C4}
+
+/* Footer */
+footer.foot{background:var(--text);color:rgba(255,255,255,.55);padding:2rem;text-align:center;font-size:.82rem;letter-spacing:.02em}
+footer.foot a{color:rgba(255,255,255,.7);text-decoration:none;margin:0 .6rem}
+footer.foot a:hover{color:white}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="index.html" class="back">← Retour au site Rejoice</a>
+  <span class="lang">
+    <a href="confidentialite.html" class="active" title="Français">FR</a>
+    <a href="confidentialite-en.html" title="English">EN</a>
+  </span>
+</div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">✦ Vos données, notre engagement</span>
+    <h1>Politique de confidentialité</h1>
+    <p class="lead">Chez Rejoice, nous collectons aussi peu de données que possible — uniquement ce qui nous permet de répondre à vos messages, de gérer les dons et les inscriptions aux séjours.</p>
+    <p class="meta">Dernière mise à jour : 9 mai 2026 · Conforme au RGPD (UE 2016/679) et à la loi Informatique &amp; Libertés</p>
+  </div>
+</header>
+
+<div class="toc-wrap">
+  <nav class="toc" aria-label="Sommaire">
+    <div class="toc-title">Sommaire</div>
+    <ol>
+      <li><a href="#responsable">Responsable du traitement</a></li>
+      <li><a href="#donnees">Données collectées</a></li>
+      <li><a href="#helloasso">Dons via HelloAsso (iframe)</a></li>
+      <li><a href="#finalites">Finalités &amp; bases légales</a></li>
+      <li><a href="#destinataires">Destinataires</a></li>
+      <li><a href="#duree">Durées de conservation</a></li>
+      <li><a href="#cookies">Cookies &amp; traceurs</a></li>
+      <li><a href="#droits">Vos droits</a></li>
+      <li><a href="#securite">Sécurité &amp; transferts</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ol>
+  </nav>
+</div>
+
+<main>
+
+<section class="block" id="responsable">
+  <h2><span class="num">01</span>Responsable du traitement</h2>
+  <p>Le responsable du traitement de vos données personnelles est l'association <strong>Rejoice</strong>, association loi 1901 enregistrée en France.</p>
+  <ul>
+    <li><strong>Contact :</strong> <a href="mailto:contact@rejoice.ngo">contact@rejoice.ngo</a></li>
+    <li><strong>Site web :</strong> <a href="https://rejoice.ngo">rejoice.ngo</a></li>
+  </ul>
+  <p>L'association n'est pas tenue de désigner un Délégué à la Protection des Données (DPO) au sens de l'article 37 du RGPD. Toute question relative à vos données peut être adressée directement à l'adresse ci-dessus.</p>
+</section>
+
+<section class="block" id="donnees">
+  <h2><span class="num">02</span>Données que nous collectons</h2>
+  <p>Nous collectons uniquement les données que vous nous transmettez activement. Aucune donnée n'est collectée à votre insu.</p>
+
+  <h3>Formulaire de contact / demande de séjour</h3>
+  <p>Le formulaire de demande utilise <strong>votre logiciel de messagerie</strong> (mailto:) — aucune donnée n'est stockée sur nos serveurs. Le message ne nous parvient que lorsque vous validez l'envoi depuis votre boîte mail.</p>
+
+  <h3>Newsletter</h3>
+  <p>Si vous vous inscrivez à notre newsletter, nous conservons uniquement votre <strong>adresse e-mail</strong> dans le but de vous envoyer nos actualités. Désinscription en 1 clic dans chaque envoi.</p>
+
+  <h3>Dons</h3>
+  <p>Les dons sont traités <strong>exclusivement par HelloAsso</strong> (voir section 3). Rejoice ne collecte ni ne stocke aucune donnée bancaire.</p>
+</section>
+
+<section class="block" id="helloasso">
+  <h2><span class="num">03</span>Dons via HelloAsso — formulaire intégré (iframe)</h2>
+
+  <div class="callout">
+    <div class="callout-title"><span>💛 Information importante</span><span class="badge">Mise à jour</span></div>
+    <p>Depuis mai 2026, le formulaire de don HelloAsso est <strong>intégré directement dans notre site sous forme d'iframe</strong> (fenêtre embarquée). Cette intégration améliore votre confort de navigation, mais elle implique le chargement de contenus tiers depuis les serveurs HelloAsso lorsque vous ouvrez la fenêtre de don.</p>
+  </div>
+
+  <h3>Qui collecte vos données lors d'un don ?</h3>
+  <p>L'intégralité du processus de don est réalisée par <strong>HelloAsso</strong> (HelloAsso SAS, 79 rue La Boétie, 75008 Paris), qui agit en qualité de <strong>responsable de traitement indépendant</strong> pour les opérations de paiement et de génération du reçu fiscal. Rejoice n'a accès qu'aux données de notification du don (montant, identité du donateur, message éventuel) et <strong>jamais à vos données bancaires</strong>.</p>
+
+  <h3>Données traitées par HelloAsso lors d'un don</h3>
+  <table class="tbl">
+    <thead><tr><th>Donnée</th><th>Finalité</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Donnée">Nom, prénom, e-mail, adresse postale</td><td data-label="Finalité">Émission du reçu fiscal et confirmation du don</td></tr>
+      <tr><td data-label="Donnée">Montant du don, fréquence (ponctuel / mensuel)</td><td data-label="Finalité">Traitement du paiement et reversement à Rejoice</td></tr>
+      <tr><td data-label="Donnée">Données bancaires (carte / IBAN)</td><td data-label="Finalité">Exécution du paiement — chiffrées et traitées par le prestataire de paiement de HelloAsso. <strong>Rejoice n'y a jamais accès.</strong></td></tr>
+      <tr><td data-label="Donnée">Adresse IP, données techniques de connexion</td><td data-label="Finalité">Sécurité du paiement, prévention de la fraude</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Cookies et traceurs déposés par l'iframe HelloAsso</h3>
+  <p>Lorsque vous ouvrez la fenêtre de don sur notre site, l'iframe HelloAsso peut déposer des <strong>cookies tiers</strong> sur votre appareil — uniquement après votre interaction (clic sur un bouton « Faire un don »). Ces cookies sont nécessaires au fonctionnement du paiement et à la sécurité de la transaction.</p>
+  <p>Tant que vous n'ouvrez pas la fenêtre de don, <strong>aucun contenu HelloAsso n'est chargé</strong> et aucun cookie tiers n'est déposé.</p>
+
+  <h3>Pour en savoir plus</h3>
+  <p>La politique de confidentialité de HelloAsso, qui décrit en détail le traitement de vos données lors d'un don, est consultable ici : <a href="https://www.helloasso.com/confidentialite" target="_blank" rel="noopener">helloasso.com/confidentialite ↗</a></p>
+</section>
+
+<section class="block" id="finalites">
+  <h2><span class="num">04</span>Finalités &amp; bases légales</h2>
+  <table class="tbl">
+    <thead><tr><th>Finalité</th><th>Base légale (RGPD art. 6)</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Finalité">Réponse aux demandes de contact / séjour</td><td data-label="Base légale">Mesures précontractuelles à votre demande (art. 6.1.b)</td></tr>
+      <tr><td data-label="Finalité">Envoi de la newsletter</td><td data-label="Base légale">Consentement (art. 6.1.a) — révocable en 1 clic</td></tr>
+      <tr><td data-label="Finalité">Gestion des dons et reçus fiscaux</td><td data-label="Base légale">Obligation légale &amp; intérêt légitime (art. 6.1.c et 6.1.f) — opéré par HelloAsso</td></tr>
+      <tr><td data-label="Finalité">Comptabilité de l'association</td><td data-label="Base légale">Obligation légale (art. 6.1.c)</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="block" id="destinataires">
+  <h2><span class="num">05</span>Destinataires des données</h2>
+  <p>Vos données ne sont <strong>jamais vendues, louées ni transmises à des tiers à des fins commerciales</strong>. Elles peuvent être communiquées uniquement aux destinataires suivants :</p>
+  <ul>
+    <li><strong>Membres autorisés de l'association Rejoice</strong> — pour répondre à vos demandes</li>
+    <li><strong>HelloAsso</strong> — pour le traitement des dons (cf. section 3)</li>
+    <li><strong>Notre hébergeur de site</strong> — pour la mise à disposition technique du site</li>
+    <li><strong>Autorités publiques</strong> — uniquement sur réquisition légale</li>
+  </ul>
+</section>
+
+<section class="block" id="duree">
+  <h2><span class="num">06</span>Durées de conservation</h2>
+  <ul>
+    <li><strong>Demandes de contact :</strong> 3 ans après le dernier échange</li>
+    <li><strong>Inscriptions newsletter :</strong> jusqu'à votre désinscription</li>
+    <li><strong>Données de dons (Rejoice) :</strong> 6 ans (obligations comptables et fiscales — art. L. 102 B LPF)</li>
+    <li><strong>Données de paiement (HelloAsso) :</strong> selon la politique HelloAsso — durées légales applicables</li>
+  </ul>
+</section>
+
+<section class="block" id="cookies">
+  <h2><span class="num">07</span>Cookies &amp; traceurs</h2>
+  <p>Le site rejoice.ngo <strong>ne dépose aucun cookie de mesure d'audience ou de publicité</strong>. Aucun outil de tracking marketing (Google Analytics, Meta Pixel, etc.) n'est intégré.</p>
+  <p>Les seuls cookies tiers susceptibles d'être déposés le sont par <strong>l'iframe HelloAsso</strong>, et uniquement après que vous ayez ouvert la fenêtre de don (cf. section 3).</p>
+  <p>Les vidéos hébergées sur YouTube et Vimeo, lorsque vous cliquez pour les lire, peuvent également déposer des cookies — gérés par leurs éditeurs respectifs.</p>
+</section>
+
+<section class="block" id="droits">
+  <h2><span class="num">08</span>Vos droits</h2>
+  <p>Conformément aux articles 15 à 22 du RGPD, vous disposez des droits suivants sur vos données :</p>
+  <ul>
+    <li><strong>Droit d'accès</strong> — obtenir la copie des données vous concernant</li>
+    <li><strong>Droit de rectification</strong> — corriger une donnée inexacte</li>
+    <li><strong>Droit à l'effacement</strong> (« droit à l'oubli »)</li>
+    <li><strong>Droit à la limitation</strong> du traitement</li>
+    <li><strong>Droit d'opposition</strong> au traitement</li>
+    <li><strong>Droit à la portabilité</strong> de vos données</li>
+    <li><strong>Droit de retirer votre consentement</strong> à tout moment</li>
+  </ul>
+  <p>Pour exercer ces droits, écrivez-nous à <a href="mailto:contact@rejoice.ngo">contact@rejoice.ngo</a>. Nous répondons sous 30 jours maximum.</p>
+  <p>Pour les données traitées par HelloAsso (dons), vous pouvez exercer vos droits directement auprès d'HelloAsso : <a href="https://www.helloasso.com/confidentialite" target="_blank" rel="noopener">helloasso.com/confidentialite ↗</a></p>
+  <p>Vous disposez également du droit d'introduire une réclamation auprès de la <strong>CNIL</strong> : <a href="https://www.cnil.fr/fr/plaintes" target="_blank" rel="noopener">cnil.fr/fr/plaintes ↗</a></p>
+</section>
+
+<section class="block" id="securite">
+  <h2><span class="num">09</span>Sécurité &amp; transferts hors UE</h2>
+  <p>Le site rejoice.ngo est servi en HTTPS. Les communications avec HelloAsso s'effectuent également en HTTPS et le paiement bénéficie des protocoles bancaires standards (3D Secure).</p>
+  <p>Vos données ne font <strong>l'objet d'aucun transfert hors de l'Union européenne</strong> par Rejoice. Pour les transferts éventuels effectués par HelloAsso ou par les hébergeurs de vidéos (YouTube / Vimeo), reportez-vous à leurs politiques respectives.</p>
+</section>
+
+<section class="block contact-card" id="contact">
+  <h2><span class="num">10</span>Une question ?</h2>
+  <p>Pour toute question relative à cette politique ou à vos données personnelles :</p>
+  <p style="margin-top:1rem;font-size:1.05rem">📩 <a href="mailto:contact@rejoice.ngo">contact@rejoice.ngo</a></p>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div>© 2025 Rejoice — Association loi 1901</div>
+  <div style="margin-top:.5rem">
+    <a href="index.html">Accueil</a> ·
+    <a href="mentions-legales.html">Mentions légales</a> ·
+    <a href="confidentialite.html">Confidentialité</a>
+  </div>
+</footer>
+
+</body>
+</html>
