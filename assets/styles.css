@@ -9,7 +9,7 @@ html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;line-height:1.6}
 
 /* ── NAV — réduite à 5 liens + CTA ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(253,248,240,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(245,200,66,0.3);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:68px;transition:box-shadow .3s}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(235,215,200,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(245,200,66,0.3);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:68px;transition:box-shadow .3s}
 nav.scrolled{box-shadow:0 2px 20px rgba(44,24,16,.1)}
 .nav-logo{display:flex;align-items:center;text-decoration:none}
 .nav-links{display:flex;align-items:center;gap:1.8rem;list-style:none}
@@ -656,6 +656,9 @@ footer{background:var(--text);color:rgba(255,255,255,.8);padding:4rem 2rem 2rem}
 .partner-name{font-family:'Caveat',cursive;font-size:1.7rem;font-weight:700;color:var(--text);line-height:1;margin-bottom:.7rem}
 .partner-desc{font-family:'Lora',serif;font-size:.88rem;color:var(--brown);line-height:1.55;margin:0;flex:1}
 .partner-desc a{color:var(--terra);font-weight:500}
+.partner-links{display:flex;flex-direction:column;gap:.2rem;margin-top:.7rem}
+.partner-links a{font-size:.75rem;color:var(--terra);font-weight:500;text-decoration:none;transition:color .2s}
+.partner-links a:hover{color:var(--text);text-decoration:underline}
 .partner-soon{background:var(--cream);opacity:.92;border-style:dashed}
 .partner-soon .partner-name{color:var(--muted);font-style:italic}
 @media(max-width:880px){.partners-grid{grid-template-columns:repeat(2,1fr)}}
@@ -675,14 +678,12 @@ footer{background:var(--text);color:rgba(255,255,255,.8);padding:4rem 2rem 2rem}
 .proj-cta-final p{font-family:'Lora',serif;font-size:1rem;color:var(--brown);margin-bottom:1.5rem}
 .proj-cta-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
 
-/* ── Piliers avec photo ── */
-.pq-card{padding:0;overflow:hidden}
+/* ── Piliers avec photo (uniquement pq-grid-4) ── */
+.pq-grid-4 .pq-card{padding:0;overflow:hidden;cursor:default}
 .pq-photo{width:100%;aspect-ratio:4/3;height:auto;object-fit:cover;object-position:center 40%;display:block;border-bottom:1.5px solid rgba(44,24,16,.06);transition:transform .5s ease}
-.pq-card{cursor:default}
-.pq-card:hover .pq-photo{transform:scale(1.04)}
-.pq-card{overflow:hidden}
+.pq-grid-4 .pq-card:hover .pq-photo{transform:scale(1.04)}
 .pq-body{padding:1.4rem 1.4rem 1.6rem;display:flex;flex-direction:column;gap:.5rem}
-.pq-card .pq-icon{margin-bottom:0;margin-top:-0.4rem}
+.pq-grid-4 .pq-card .pq-icon{margin-bottom:0;margin-top:-0.4rem}
 
 /* ── Photos plus vives ── */
 .pq-photo,.terrain-hero img,.terrain-cell img,.terrain-wide img,.terrain-small img{filter:saturate(1.18) contrast(1.06) brightness(1.02)}
