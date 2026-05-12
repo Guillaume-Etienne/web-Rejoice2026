@@ -264,6 +264,24 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
   document.querySelectorAll(sel).forEach((el,i)=>{el.style.transitionDelay=(i*70)+'ms';el.classList.add('reveal');obs.observe(el);});
 });
 
+/* ── YOUTUBE MODAL ── */
+function openYtModal(){
+  var m=document.getElementById('ytModal'),f=document.getElementById('ytIframe');
+  if(!m||!f)return;
+  if(!f.src)f.src='https://www.youtube.com/embed/B_YjO3QzL7w?autoplay=1&rel=0';
+  m.classList.add('open');m.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
+}
+function closeYtModal(){
+  var m=document.getElementById('ytModal'),f=document.getElementById('ytIframe');
+  if(!m)return;
+  m.classList.remove('open');m.setAttribute('aria-hidden','true');
+  if(f)f.src='';
+  document.body.style.overflow='';
+}
+var _ytModal=document.getElementById('ytModal');
+if(_ytModal)_ytModal.addEventListener('click',function(e){if(e.target===this)closeYtModal();});
+
 /* ────────────────────── */
 
 /* ── HELLOASSO IFRAME — config ──
@@ -300,7 +318,7 @@ document.addEventListener('click', function(e){
   openHaModal();
 });
 /* Fermer avec Escape ou clic sur le fond */
-document.addEventListener('keydown', e => { if(e.key === 'Escape') closeHaModal(); });
+document.addEventListener('keydown', e => { if(e.key === 'Escape') { closeHaModal(); closeYtModal(); } });
 document.getElementById('haModal').addEventListener('click', function(e){
   if(e.target === this) closeHaModal();
 });

@@ -11,7 +11,7 @@ body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--text);ov
 /* ── NAV — réduite à 5 liens + CTA ── */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(235,215,200,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(245,200,66,0.3);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:68px;transition:box-shadow .3s}
 nav.scrolled{box-shadow:0 2px 20px rgba(44,24,16,.1)}
-.nav-logo{display:flex;align-items:center;text-decoration:none;background:rgba(92,61,46,0.18);padding:.3rem .65rem;border-radius:var(--rsm)}
+.nav-logo{display:flex;align-items:center;text-decoration:none;background:rgba(92,61,46,0.42);padding:.3rem .65rem;border-radius:var(--rsm)}
 .nav-links{display:flex;align-items:center;gap:1.8rem;list-style:none}
 .nav-links a{font-size:.82rem;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
 .nav-links a:hover{color:var(--terra)}
@@ -520,6 +520,16 @@ footer{background:var(--text);color:rgba(255,255,255,.8);padding:4rem 2rem 2rem}
   .ha-modal{padding:0}
   .ha-modal-card{max-width:100%;height:100vh;height:100dvh;border-radius:0}
 }
+
+/* ── YOUTUBE MODAL ── */
+.yt-modal{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.82);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);padding:2rem;animation:haFade .25s ease}
+.yt-modal.open{display:flex}
+.yt-modal-card{position:relative;width:min(860px,92vw);border-radius:var(--r);overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.7);animation:haPop .3s cubic-bezier(.2,.9,.3,1.2)}
+.yt-modal-close{position:absolute;top:.6rem;right:.7rem;z-index:2;background:rgba(0,0,0,.55);border:none;color:#fff;font-size:1.5rem;line-height:1;width:2.1rem;height:2.1rem;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s}
+.yt-modal-close:hover{background:rgba(0,0,0,.85)}
+.yt-ratio{position:relative;padding-bottom:56.25%;height:0;background:#000}
+.yt-ratio iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+@media(max-width:600px){.yt-modal{padding:0}.yt-modal-card{width:100%;border-radius:0}}
 
 /* ── MULTIPAGE — page header & transparence ── */
 .page-header{padding:140px 2rem 3rem;background:linear-gradient(180deg,var(--cream) 0%,#FFF8E8 100%);text-align:center;border-bottom:1px solid rgba(245,200,66,.25)}
