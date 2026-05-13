@@ -265,6 +265,20 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
   document.querySelectorAll(sel).forEach((el,i)=>{el.style.transitionDelay=(i*70)+'ms';el.classList.add('reveal');obs.observe(el);});
 });
 
+/* ── PROPOSITION 2 — SÉLECTEUR CALENDRIER ── */
+document.querySelectorAll('.p2-tab').forEach(function(tab) {
+  tab.addEventListener('click', function() {
+    document.querySelectorAll('.p2-tab').forEach(function(t) { t.classList.remove('active'); });
+    this.classList.add('active');
+    var target = this.getAttribute('data-p2');
+    document.querySelectorAll('.p2-card').forEach(function(c) { c.classList.add('p2-hidden'); });
+    var card = document.getElementById('p2-' + target);
+    if (card) card.classList.remove('p2-hidden');
+    var cta = document.getElementById('p2-cta');
+    if (cta) cta.textContent = target === 'ete' ? '✦ Réserver ma place' : "M'inscrire à la liste d'attente";
+  });
+});
+
 /* ── YOUTUBE MODAL ── */
 function openYtModal(){
   var m=document.getElementById('ytModal'),f=document.getElementById('ytIframe');
