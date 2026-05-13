@@ -167,7 +167,8 @@ document.addEventListener('keydown', function(e){
   var playing=false;
   vid.addEventListener('loadeddata',function(){if(fb)fb.style.display='none';});
   btn.onclick=function(){
-    if(!playing){vid.play().then(function(){playing=true;if(fb)fb.style.display='none';btn.style.opacity='0';}).catch(function(){});}
+    if(fb && fb.style.display!=='none'){openYtModal();return;}
+    if(!playing){vid.play().then(function(){playing=true;if(fb)fb.style.display='none';btn.style.opacity='0';}).catch(function(){openYtModal();});}
     else{vid.pause();playing=false;btn.style.opacity='1';}
   };
   vid.onclick=function(){if(playing){vid.pause();playing=false;btn.style.opacity='1';}};
