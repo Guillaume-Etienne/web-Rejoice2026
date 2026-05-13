@@ -265,17 +265,21 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
   document.querySelectorAll(sel).forEach((el,i)=>{el.style.transitionDelay=(i*70)+'ms';el.classList.add('reveal');obs.observe(el);});
 });
 
-/* ── PROPOSITION 2 — SÉLECTEUR CALENDRIER ── */
-document.querySelectorAll('.p2-tab').forEach(function(tab) {
-  tab.addEventListener('click', function() {
-    document.querySelectorAll('.p2-tab').forEach(function(t) { t.classList.remove('active'); });
-    this.classList.add('active');
-    var target = this.getAttribute('data-p2');
-    document.querySelectorAll('.p2-card').forEach(function(c) { c.classList.add('p2-hidden'); });
-    var card = document.getElementById('p2-' + target);
-    if (card) card.classList.remove('p2-hidden');
-    var cta = document.getElementById('p2-cta');
-    if (cta) cta.textContent = target === 'ete' ? '✦ Réserver ma place' : "M'inscrire à la liste d'attente";
+/* ── DON — SÉLECTEUR DE MONTANT ── */
+document.querySelectorAll('.don-amt').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.don-amt').forEach(function(b) { b.classList.remove('selected'); });
+    this.classList.add('selected');
+    var montant = this.getAttribute('data-montant');
+    var cta = document.getElementById('donCta');
+    if (!cta) return;
+    if (montant) {
+      cta.textContent = '💛 Donner ' + montant + ' €';
+      cta.setAttribute('data-montant', montant);
+    } else {
+      cta.textContent = '💛 Donner un montant libre';
+      cta.removeAttribute('data-montant');
+    }
   });
 });
 
@@ -306,11 +310,13 @@ if(_ytModal)_ytModal.addEventListener('click',function(e){if(e.target===this)clo
 const HA_WIDGET_URL = "https://www.helloasso.com/associations/rejoice-63/formulaires/1/widget";
 const HA_FALLBACK_URL = "https://www.helloasso.com/associations/rejoice-63/accueil";
 
-function openHaModal(){
+var _haLastUrl = '';
+function openHaModal(montant){
   const m = document.getElementById('haModal');
   const f = document.getElementById('haIframe');
   const l = document.getElementById('haLoading');
-  if(!f.src) f.src = HA_WIDGET_URL;
+  var url = HA_WIDGET_URL + (montant ? '?montant=' + montant : '');
+  if(_haLastUrl !== url){ f.src = url; _haLastUrl = url; }
   l.style.display = 'flex';
   f.onload = () => { l.style.display = 'none'; };
   m.classList.add('open');
@@ -330,7 +336,8 @@ document.addEventListener('click', function(e){
   /* Laisse le footer "Ouvrir dans un nouvel onglet" fonctionner normalement */
   if(a.closest('.ha-modal-foot')) return;
   e.preventDefault();
-  openHaModal();
+  var montant = a.getAttribute('data-montant');
+  openHaModal(montant || null);
 });
 /* Fermer avec Escape ou clic sur le fond */
 document.addEventListener('keydown', e => { if(e.key === 'Escape') { closeHaModal(); closeYtModal(); } });
