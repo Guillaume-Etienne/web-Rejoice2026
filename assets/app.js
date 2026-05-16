@@ -22,9 +22,9 @@ const IMGS = {
   LUNCH: "img/extracted/lunch-8c969949.jpg",
   MEDITA: "img/extracted/medita-8c969949.jpg",
   NEPAL_GROUP: "img/extracted/nepal_group-8c969949.jpg",
-  PANORAMA: "img/extracted/panorama-8c969949.jpg",
+  PANORAMA: "img/vudepuispoum.jpeg",
   SCREEN: "img/extracted/screen-c6c62fb9.jpg",
-  SELFIE: "img/extracted/selfie-8c969949.jpg",
+  SELFIE: "img/liensquisecrees.jpeg",
   TIFF2: "img/extracted/tiff2-8c969949.jpg",
   TIFF3: "img/extracted/tiff3-8c969949.jpg",
   TIFF4: "img/extracted/tiff4-8c969949.jpg",
@@ -37,7 +37,7 @@ const IMGS = {
   PILIER_ORPHELINAT: "img/extracted/pilier_orphelinat-c6c62fb9.jpg",
   IKER_02: "img/extracted/iker_02-c6c62fb9.jpg",
   BURGER_POUM: "img/extracted/burger_poum-8c969949.jpg",
-  DEJ_POUM: "img/extracted/dej_poum-8c969949.jpg",
+  DEJ_POUM: "img/petitmatinpartagé.jpeg",
   INT_CO: "img/extracted/int_co-8c969949.jpg"
 };
 
