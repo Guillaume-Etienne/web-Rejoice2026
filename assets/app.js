@@ -1,3 +1,4 @@
+const BASE = window.IMG_BASE || '';
 const IMGS = {
   BEDROOM: "img/extracted/bedroom-8c969949.jpg",
   BKFAST: "img/extracted/bkfast-8c969949.jpg",
@@ -40,6 +41,7 @@ const IMGS = {
   DEJ_POUM: "img/petitmatinpartagé.jpeg",
   INT_CO: "img/extracted/int_co-8c969949.jpg"
 };
+if (BASE) Object.keys(IMGS).forEach(function(k){ IMGS[k] = BASE + IMGS[k]; });
 
 const galleryPhotos = [
   {src:'GROUP',       cap:'Un groupe engagé au service des autres'},
